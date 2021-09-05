@@ -1,0 +1,15 @@
+#Prefix
+Prefix: '&6&lKitPvP'
+#IP do /ip########
+ip_do_sv: 'Em_Breve'
+#####################
+#Site do Servidor 
+Site: '&cTestlerKits.com.br'
+#Donos do Servidor
+Dono: '&5&lDo&a&lnos &6» &4&lAltere_Na_Config'
+#Formulario do /aplicar
+Formulario: '&5&lFomu&a&llário &6» &cAltere_Na_Config!'
+#MOTD
+Motd: '&e&lServidor de KitPvP 1.7/1.8 &2Entre e vire o melhor no PvP!'
+#MOTD Da Whitelist
+Motd_Manutencao: '&cServidor em manutencao, volte em breve!'

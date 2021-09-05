@@ -1,0 +1,87 @@
+name: KitPvP
+main: Main.Main
+version: 1.0
+author: EhOMarcello
+description: Plugin de KitPvP feito pelo zMarcYT
+commands:
+  kit:
+  menu:
+  build:
+  parkour:
+  head: 
+  help:    
+  gm:
+  tell:      
+  tp:   
+  warps:
+  inv: 
+  youtuber:
+     aliases: [yt]   
+  clearchat:
+     aliases: [cc]
+  spawn:
+  setspawn:
+  bc:
+  report:   
+  sc:
+  darmoedas:
+  admin:     
+  tags:  
+  tag:       
+  jail:
+  tpall:
+  met:
+  ip:      
+  morrer:
+     aliases: [suicide]    
+  lojakits:
+  loja:
+  lojaperms:
+  setarena:
+  staff:
+  help:    
+  coins:
+  dano:
+  ping:
+  account:
+       aliases: [acc]
+  fly:
+    aliases: [voar]
+  addpermission:
+  chat:
+  moedas:
+  gratis:
+  lojakits:
+  skit:
+  checar:
+  events:
+  regras:
+  setmdr:
+  mdr:
+  setrdm:
+  rdm:
+  parkour:
+  setparkour:
+  fps:
+  setfps:
+  challenge:
+  setchallenge:
+  score:
+  themain:   
+  setmain:
+  setknock:
+  knock:
+  settextura:
+  textura:
+  dono:
+  ranks:
+  lojaperms:
+  v:
+  aplicar:
+  autosoup:
+  extras:
+  kits:
+  kits2:
+  status:
+  online:
+    aliases: [on, onlines]
