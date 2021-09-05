@@ -7,7 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Coins.XpM;
 import Main.Main;
 
 public class DarXp implements CommandExecutor, Listener {
@@ -38,8 +37,9 @@ public class DarXp implements CommandExecutor, Listener {
 				if (isNumeric(args[1])) {
 					int coins = Integer.parseInt(args[1]);
 					XpM.addMoney(target, coins);
-					p.sendMessage (Main.prefix + " §aVoce deu ao jogador §a" + target.getName() + " §2" + coins + " §7Moedas");
-							
+					p.sendMessage(
+							Main.prefix + " §aVoce deu ao jogador §a" + target.getName() + " §2" + coins + " §7Moedas");
+
 					target.sendMessage(
 							Main.prefix + " §aVoce recebeu do jogador §a" + p.getName() + " §2" + coins + " §7Moedas");
 				}

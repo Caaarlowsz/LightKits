@@ -1,34 +1,40 @@
 package Kits;
 
-import org.bukkit.event.player.*;
-import org.bukkit.event.block.*;
-import Eventos.*;
-import java.util.*;
-import Main.*;
-import org.bukkit.entity.*;
-import org.bukkit.*;
-import org.bukkit.event.*;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
 
-public class Thor implements Listener
-{
-    @EventHandler
-    public void ThorKit(final PlayerInteractEvent e) {
-        final Player p = e.getPlayer();
-        if (Habilidade.getAbility(p).equalsIgnoreCase("Thor") && (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) && p.getItemInHand().getType() == Material.GOLD_AXE) {
-            if (Cooldown.add(p)) {
-                Basico.MensagemCooldown(p);
-                return;
-            }
-            Cooldown.add(p, 5);
-            final Location loc = p.getTargetBlock((HashSet)null, 30).getLocation();
-            p.getWorld().strikeLightning(loc);
-            e.setCancelled(true);
-            Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable)new Runnable() {
-                @Override
-                public void run() {
-                    p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
-                }
-            }, 100L);
-        }
-    }
+import Eventos.Basico;
+import Eventos.Cooldown;
+import Eventos.Habilidade;
+import Main.Main;
+
+public class Thor implements Listener {
+	@EventHandler
+	public void ThorKit(final PlayerInteractEvent e) {
+		final Player p = e.getPlayer();
+		if (Habilidade.getAbility(p).equalsIgnoreCase("Thor")
+				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
+				&& p.getItemInHand().getType() == Material.GOLD_AXE) {
+			if (Cooldown.add(p)) {
+				Basico.MensagemCooldown(p);
+				return;
+			}
+			Cooldown.add(p, 5);
+			final Location loc = p.getTargetBlock(null, 30).getLocation();
+			p.getWorld().strikeLightning(loc);
+			e.setCancelled(true);
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				@Override
+				public void run() {
+					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+				}
+			}, 100L);
+		}
+	}
 }
