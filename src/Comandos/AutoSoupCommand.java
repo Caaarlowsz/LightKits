@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class AutoSoupCommand implements CommandExecutor, Listener {
 	public static HashMap<String, ItemStack[]> saveinv;
@@ -27,21 +27,21 @@ public class AutoSoupCommand implements CommandExecutor, Listener {
 
 	public boolean onCommand(final CommandSender s, final Command c, final String l, final String[] args) {
 		if (!(s instanceof Player)) {
-			s.sendMessage("§c§lAUTOSOUP §7Use esse comando no servidor!");
+			s.sendMessage("ï¿½cï¿½lAUTOSOUP ï¿½7Use esse comando no servidor!");
 			return true;
 		}
 		if (c.getName().equalsIgnoreCase("autosoup")) {
 			final Player p = (Player) s;
 			if (!p.hasPermission("cmd.admin")) {
-				p.sendMessage("§cDesculpe, Mas voce nao tem permissao para executar isto.");
+				p.sendMessage("ï¿½cDesculpe, Mas voce nao tem permissao para executar isto.");
 			}
 			if (args.length == 0) {
-				p.sendMessage("§c§lAUTOSOUP §7Use /autosoup (jogador)!");
+				p.sendMessage("ï¿½cï¿½lAUTOSOUP ï¿½7Use /autosoup (jogador)!");
 				return true;
 			}
 			final Player rr = Bukkit.getPlayer(args[0]);
 			if (rr == null) {
-				p.sendMessage("§cO Player '" + args[0] + "' esta offline ou nao existe!");
+				p.sendMessage("ï¿½cO Player '" + args[0] + "' esta offline ou nao existe!");
 			} else {
 				AutoSoupCommand.armadura.put(rr.getName(), rr.getInventory().getArmorContents());
 				AutoSoupCommand.saveinv.put(rr.getName(), rr.getInventory().getContents());
@@ -53,49 +53,49 @@ public class AutoSoupCommand implements CommandExecutor, Listener {
 						rr.setHealth(5.0);
 						rr.getInventory().setItem(11, new ItemStack(Material.MUSHROOM_SOUP));
 					}
-				}.runTaskLater(Main.getPlugin(), 1L);
+				}.runTaskLater(LightPvP.getPlugin(), 1L);
 				new BukkitRunnable() {
 					public void run() {
 						rr.setHealth(5.0);
 						rr.damage(0.5);
 						rr.getInventory().setItem(12, new ItemStack(Material.MUSHROOM_SOUP));
 					}
-				}.runTaskLater(Main.getPlugin(), 10L);
+				}.runTaskLater(LightPvP.getPlugin(), 10L);
 				new BukkitRunnable() {
 					public void run() {
 						rr.setHealth(5.0);
 						rr.damage(0.5);
 						rr.getInventory().setItem(13, new ItemStack(Material.MUSHROOM_SOUP));
 					}
-				}.runTaskLater(Main.getPlugin(), 20L);
+				}.runTaskLater(LightPvP.getPlugin(), 20L);
 				new BukkitRunnable() {
 					public void run() {
 						rr.setHealth(5.0);
 						rr.damage(0.5);
 						rr.getInventory().setItem(14, new ItemStack(Material.MUSHROOM_SOUP));
 					}
-				}.runTaskLater(Main.getPlugin(), 30L);
+				}.runTaskLater(LightPvP.getPlugin(), 30L);
 				new BukkitRunnable() {
 					public void run() {
 						rr.setHealth(5.0);
 						rr.damage(0.5);
 						rr.getInventory().setItem(15, new ItemStack(Material.MUSHROOM_SOUP));
 					}
-				}.runTaskLater(Main.getPlugin(), 40L);
+				}.runTaskLater(LightPvP.getPlugin(), 40L);
 				new BukkitRunnable() {
 					public void run() {
 						rr.setHealth(5.0);
 						rr.damage(0.5);
 						rr.getInventory().setItem(16, new ItemStack(Material.MUSHROOM_SOUP));
 					}
-				}.runTaskLater(Main.getPlugin(), 50L);
+				}.runTaskLater(LightPvP.getPlugin(), 50L);
 				new BukkitRunnable() {
 					public void run() {
 						p.getOpenInventory().close();
-						p.sendMessage("§c§lAUTOSOUP §7Voce testou o AutoSoup em " + rr.getName() + "§7Ele tomou §e"
-								+ AutoSoupCommand.getAmount(rr, Material.BOWL) + " §7/ §e6");
+						p.sendMessage("ï¿½cï¿½lAUTOSOUP ï¿½7Voce testou o AutoSoup em " + rr.getName() + "ï¿½7Ele tomou ï¿½e"
+								+ AutoSoupCommand.getAmount(rr, Material.BOWL) + " ï¿½7/ ï¿½e6");
 					}
-				}.runTaskLater(Main.getPlugin(), 60L);
+				}.runTaskLater(LightPvP.getPlugin(), 60L);
 				new BukkitRunnable() {
 					public void run() {
 						rr.getInventory().clear();
@@ -103,7 +103,7 @@ public class AutoSoupCommand implements CommandExecutor, Listener {
 						rr.getInventory().setContents((ItemStack[]) AutoSoupCommand.saveinv.get(rr.getName()));
 						rr.setHealth(20.0);
 					}
-				}.runTaskLater(Main.getPlugin(), 75L);
+				}.runTaskLater(LightPvP.getPlugin(), 75L);
 			}
 		}
 		return false;

@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Cooldown implements Listener {
 	public static HashMap<Player, Long> run;
@@ -19,7 +19,7 @@ public class Cooldown implements Listener {
 		final long CoolDownLength = System.currentTimeMillis() + seconds * 1000;
 		Cooldown.run.remove(p);
 		Cooldown.run.put(p, CoolDownLength);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				Cooldown.run.remove(p);

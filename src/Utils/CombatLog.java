@@ -13,7 +13,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class CombatLog implements Listener {
 	public static HashMap<Player, Player> emcombate;
@@ -29,9 +29,9 @@ public class CombatLog implements Listener {
 	public static String statuscombat(final Player p) {
 		String nome = "";
 		if (emCombate(p)) {
-			nome = "§aSim";
+			nome = "ï¿½aSim";
 		} else if (!emCombate(p)) {
-			nome = "§cN\u00e3o";
+			nome = "ï¿½cN\u00e3o";
 		}
 		return nome;
 	}
@@ -45,15 +45,15 @@ public class CombatLog implements Listener {
 					&& !CombatLog.emcombate.containsKey(p) && !CombatLog.emcombate.containsKey(hitter)) {
 				CombatLog.emcombate.put(p, hitter);
 				CombatLog.emcombate.put(hitter, p);
-				hitter.sendMessage("§7Voc\u00ea est\u00e1 em combate com §c" + p.getDisplayName());
-				p.sendMessage("§7Voc\u00ea est\u00e1 em combate com §c" + hitter.getDisplayName());
-				Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance, (Runnable) new Runnable() {
+				hitter.sendMessage("ï¿½7Voc\u00ea est\u00e1 em combate com ï¿½c" + p.getDisplayName());
+				p.sendMessage("ï¿½7Voc\u00ea est\u00e1 em combate com ï¿½c" + hitter.getDisplayName());
+				Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						CombatLog.emcombate.remove(p);
 						CombatLog.emcombate.remove(hitter);
-						hitter.sendMessage("§aVoc\u00ea est\u00e1 fora de combate");
-						p.sendMessage("§aVoc\u00ea est\u00e1 fora de combate");
+						hitter.sendMessage("ï¿½aVoc\u00ea est\u00e1 fora de combate");
+						p.sendMessage("ï¿½aVoc\u00ea est\u00e1 fora de combate");
 					}
 				}, 80L);
 			}
@@ -66,7 +66,7 @@ public class CombatLog implements Listener {
 		if (CombatLog.emcombate.containsKey(p)) {
 			final Player t = CombatLog.emcombate.get(p);
 			p.teleport(p.getWorld().getSpawnLocation());
-			t.sendMessage("§aVoc\u00ea est\u00e1 fora de combate");
+			t.sendMessage("ï¿½aVoc\u00ea est\u00e1 fora de combate");
 			CombatLog.emcombate.remove(p);
 			CombatLog.emcombate.remove(t);
 		}
@@ -81,8 +81,8 @@ public class CombatLog implements Listener {
 			p.teleport(p.getWorld().getSpawnLocation());
 			CombatLog.emcombate.remove(p);
 			CombatLog.emcombate.remove(t);
-			Bukkit.broadcastMessage("§7 " + p.getName() + "§c Deslogou No PvP!");
-			t.sendMessage("§aVoc\u00ea est\u00e1 fora de combate");
+			Bukkit.broadcastMessage("ï¿½7 " + p.getName() + "ï¿½c Deslogou No PvP!");
+			t.sendMessage("ï¿½aVoc\u00ea est\u00e1 fora de combate");
 		}
 	}
 
@@ -90,7 +90,7 @@ public class CombatLog implements Listener {
 	public void aocomando(final PlayerCommandPreprocessEvent e) {
 		final Player p = e.getPlayer();
 		if (e.getMessage().toLowerCase().startsWith("/") && CombatLog.emcombate.containsKey(p)) {
-			p.sendMessage("§cVoce nao pode usar comandos em PvP!");
+			p.sendMessage("ï¿½cVoce nao pode usar comandos em PvP!");
 			e.setCancelled(true);
 		}
 	}

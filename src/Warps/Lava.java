@@ -18,13 +18,13 @@ import org.bukkit.potion.PotionEffectType;
 import com.connorlinfoot.titleapi.TitleAPI;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Lava implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public Lava(final Main main) {
+	public Lava(final LightPvP main) {
 		Lava.plugin = main;
 	}
 
@@ -35,23 +35,23 @@ public class Lava implements Listener, CommandExecutor {
 			p.setFlying(false);
 			p.setAllowFlight(false);
 			p.setGameMode(GameMode.SURVIVAL);
-			final World w = Bukkit.getServer().getWorld(Main.instance.getConfig().getString("lava.world"));
-			final double x = Main.instance.getConfig().getDouble("lava.x");
-			final double y = Main.instance.getConfig().getDouble("lava.y");
-			final double z = Main.instance.getConfig().getDouble("lava.z");
+			final World w = Bukkit.getServer().getWorld(LightPvP.instance.getConfig().getString("lava.world"));
+			final double x = LightPvP.instance.getConfig().getDouble("lava.x");
+			final double y = LightPvP.instance.getConfig().getDouble("lava.y");
+			final double z = LightPvP.instance.getConfig().getDouble("lava.z");
 			final Location lobby = new Location(w, x, y, z);
-			lobby.setPitch((float) Main.instance.getConfig().getDouble("lava.pitch"));
-			lobby.setYaw((float) Main.instance.getConfig().getDouble("lava.yaw"));
+			lobby.setPitch((float) LightPvP.instance.getConfig().getDouble("lava.pitch"));
+			lobby.setYaw((float) LightPvP.instance.getConfig().getDouble("lava.yaw"));
 			p.getInventory().clear();
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportando Aguarde");
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance, (Runnable) new Runnable() {
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportando Aguarde");
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportado");
-					TitleAPI.sendFullTitle(p, 50, 50, 80, "§aVoce foi para a", "§b§lCHALLENGE");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportado");
+					TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½aVoce foi para a", "ï¿½bï¿½lCHALLENGE");
 					Habilidade.setAbility(p, "LavaChallenge");
 					KitAPI.remove(p);
 					p.getInventory().setBoots((ItemStack) null);

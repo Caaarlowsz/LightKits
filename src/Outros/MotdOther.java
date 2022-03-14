@@ -5,14 +5,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerListPingEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class MotdOther implements Listener {
 	@EventHandler
 	public void NomedoServer(final ServerListPingEvent e) {
-		e.setMotd(Main.motd);
+		e.setMotd(LightPvP.motd);
 		if (Bukkit.hasWhitelist()) {
-			e.setMotd(Main.motd2);
+			e.setMotd(LightPvP.motd2);
 		}
 	}
 }

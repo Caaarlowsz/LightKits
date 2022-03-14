@@ -15,7 +15,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Velotrol implements Listener {
@@ -28,7 +28,7 @@ public class Velotrol implements Listener {
 		Velotrol.cooldownm = new ArrayList<Player>();
 	}
 
-	public Velotrol(final Main main) {
+	public Velotrol(final LightPvP main) {
 		this.boost = Integer.valueOf(6);
 	}
 
@@ -42,62 +42,62 @@ public class Velotrol implements Listener {
 				event.setCancelled(true);
 			}
 			if (Velotrol.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o CoolDown Acabar");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o CoolDown Acabar");
 				return;
 			}
 			p.setVelocity(p.getEyeLocation().getDirection().multiply(this.boost).add(new Vector(0, 0, 0)));
 			p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 			final Location loc = p.getLocation();
 			Velotrol.velotrol.add(p.getName());
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 15L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 14L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 13L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 12L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 11L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 10L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getPlayer().getWorld().playEffect(p.getPlayer().getLocation(), Effect.SMOKE, 10, 0);
 				}
 			}, 9L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getWorld().createExplosion(loc, 3.0f);
 				}
 			}, 30L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Velotrol.velotrol.remove(p.getName());
@@ -105,11 +105,11 @@ public class Velotrol implements Listener {
 			}, 50L);
 			p.getWorld().playSound(loc, Sound.ENDERMAN_TELEPORT, 5.0f, -5.0f);
 			Velotrol.cooldownm.add(p);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Velotrol.cooldownm.remove(p);
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 5.0f, 5.0f);
 				}
 			}, 700L);

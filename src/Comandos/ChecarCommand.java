@@ -7,11 +7,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class ChecarCommand implements CommandExecutor {
 
-	public ChecarCommand(final Main plugin) {
+	public ChecarCommand(final LightPvP plugin) {
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String commandLabel,
@@ -25,13 +25,13 @@ public class ChecarCommand implements CommandExecutor {
 			if (args.length == 1) {
 				final Player target = p.getServer().getPlayer(args[0]);
 				if (target != null) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §cIP: §4" + target.getAddress().getHostString());
-					p.sendMessage(String.valueOf(Main.prefix) + " §cKit: §4" + Habilidade.getAbility(p));
+					p.sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½cIP: ï¿½4" + target.getAddress().getHostString());
+					p.sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½cKit: ï¿½4" + Habilidade.getAbility(p));
 				} else {
 					p.sendMessage("Invalid " + args[0] + " Player");
 				}
 			} else {
-				p.sendMessage(String.valueOf(Main.prefix) + " §7Use: /" + commandLabel + " (player)");
+				p.sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½7Use: /" + commandLabel + " (player)");
 			}
 		}
 		return false;

@@ -23,7 +23,7 @@ import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.help.HelpTopic;
 
 import Coins.XpM;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Menus.ExtrasInventory;
 import Menus.KitsInventory;
 import Menus.LojaInventory;
@@ -34,7 +34,7 @@ import net.minecraft.server.v1_7_R4.EnumClientCommand;
 import net.minecraft.server.v1_7_R4.PacketPlayInClientCommand;
 
 public class Comum implements Listener {
-	public Comum(final Main main) {
+	public Comum(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -48,7 +48,7 @@ public class Comum implements Listener {
 		if (event.getMessage().toLowerCase().startsWith("/me")
 				|| event.getMessage().toLowerCase().startsWith("//calc")) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cComando Bloqueado.");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cComando Bloqueado.");
 		}
 	}
 
@@ -120,7 +120,7 @@ public class Comum implements Listener {
 			if (p.hasPermission("entrar.lotado")) {
 				event.setResult(PlayerLoginEvent.Result.ALLOWED);
 			} else {
-				event.setKickMessage("§cServidor Lotado Tente Novamente Em Instantes");
+				event.setKickMessage("ï¿½cServidor Lotado Tente Novamente Em Instantes");
 			}
 		} else if (event.getResult() == PlayerLoginEvent.Result.KICK_WHITELIST) {
 			event.setKickMessage(ChatColor.RED + "Servidor Em Manuten\u00e7\u00e3o Tente Em Instantes");
@@ -143,7 +143,7 @@ public class Comum implements Listener {
 		final Player p = event.getPlayer();
 		if (event.getMessage().toLowerCase().startsWith("/me")) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7Este comando nao existe.");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7Este comando nao existe.");
 		}
 	}
 
@@ -157,7 +157,7 @@ public class Comum implements Listener {
 		final HelpTopic topic = Bukkit.getServer().getHelpMap().getHelpTopic(msg);
 		if (topic == null) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7Comando Inexistente");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7Comando Inexistente");
 		}
 	}
 
@@ -171,10 +171,10 @@ public class Comum implements Listener {
 			KillsdeathsmoneyAPI.addKill(t, 1);
 			XpM.addMoney(t, 50);
 			XpM.removeMoney(p, 20);
-			p.sendMessage("§c§lVoc\u00ea morreu para " + t.getName() + " §c§l- 20 Coins");
-			t.sendMessage("§c§lVoc\u00ea matou " + p.getDisplayName() + " §c§b+ 50 Coins");
+			p.sendMessage("ï¿½cï¿½lVoc\u00ea morreu para " + t.getName() + " ï¿½cï¿½l- 20 Coins");
+			t.sendMessage("ï¿½cï¿½lVoc\u00ea matou " + p.getDisplayName() + " ï¿½cï¿½b+ 50 Coins");
 		}
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				e.getEntity().setFlying(false);
@@ -189,9 +189,9 @@ public class Comum implements Listener {
 
 	@EventHandler
 	public void aoPing(final ServerListPingEvent e) {
-		e.setMotd(Main.motd);
+		e.setMotd(LightPvP.motd);
 		if (Bukkit.hasWhitelist()) {
-			e.setMotd(Main.motd2);
+			e.setMotd(LightPvP.motd2);
 		}
 	}
 

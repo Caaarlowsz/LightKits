@@ -22,14 +22,14 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Sonic implements Listener {
 	public int boost;
 	public static ArrayList<String> Sonic;
 	public static HashMap<String, ItemStack[]> Armadura;
-	public static Main plugin;
+	public static LightPvP plugin;
 	public static HashMap<String, ItemStack[]> saveinv;
 	public static HashMap<String, ItemStack[]> armadura;
 	public static HashMap<String, ItemStack[]> Armadura2;
@@ -44,7 +44,7 @@ public class Sonic implements Listener {
 		Kits.Sonic.cooldownm = new ArrayList<Player>();
 	}
 
-	public Sonic(final Main main) {
+	public Sonic(final LightPvP main) {
 		this.boost = Integer.valueOf(6);
 	}
 
@@ -58,7 +58,7 @@ public class Sonic implements Listener {
 				event.setCancelled(true);
 			}
 			if (Kits.Sonic.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o CoolDown Acabar");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o CoolDown Acabar");
 				return;
 			}
 			Kits.Sonic.cooldownm.add(p);
@@ -95,19 +95,19 @@ public class Sonic implements Listener {
 			p.getInventory().setLeggings(Calss);
 			p.getInventory().setBoots(Bota);
 			p.updateInventory();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getInventory().setArmorContents((ItemStack[]) null);
 					p.updateInventory();
 				}
 			}, 50L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Kits.Sonic.cooldownm.remove(p);
 					Kits.Sonic.Sonic.remove(p.getName());
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» CoolDown §aAcabou");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ CoolDown ï¿½aAcabou");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 5.0f, 5.0f);
 				}
 			}, 700L);

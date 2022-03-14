@@ -5,7 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Raios implements Listener {
 	public static double cos(final double i) {
@@ -37,7 +37,7 @@ public class Raios implements Listener {
 					this.cancel();
 				}
 			}
-		}.runTaskTimer((Plugin) Main.instance, 0L, 3L);
+		}.runTaskTimer((Plugin) LightPvP.instance, 0L, 3L);
 	}
 
 	public static void kitaguala(final Location loc) {
@@ -57,7 +57,7 @@ public class Raios implements Listener {
 					this.cancel();
 				}
 			}
-		}.runTaskTimer((Plugin) Main.instance, 0L, 1L);
+		}.runTaskTimer((Plugin) LightPvP.instance, 0L, 1L);
 	}
 
 	public static void FireBender(final Location loc) {
@@ -77,6 +77,6 @@ public class Raios implements Listener {
 					this.cancel();
 				}
 			}
-		}.runTaskTimer((Plugin) Main.instance, 0L, 1L);
+		}.runTaskTimer((Plugin) LightPvP.instance, 0L, 1L);
 	}
 }

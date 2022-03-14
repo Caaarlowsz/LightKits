@@ -18,7 +18,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Thresh implements Listener {
@@ -30,7 +30,7 @@ public class Thresh implements Listener {
 		Thresh.tiros = new HashMap<String, Snowball>();
 	}
 
-	public Thresh(final Main main) {
+	public Thresh(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -48,10 +48,10 @@ public class Thresh implements Listener {
 				Thresh.tiros.put(p.getName(), tiro);
 				Thresh.cooldown.put(p.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(15L));
 				p.playSound(p.getLocation(), Sound.GLASS, 1.0f, 1.0f);
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voc\u00ea Lan\u00e7ou Seu Thresh!");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voc\u00ea Lan\u00e7ou Seu Thresh!");
 				return;
 			}
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o CoolDown Terminar");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o CoolDown Terminar");
 		}
 	}
 
@@ -73,7 +73,7 @@ public class Thresh implements Listener {
 					hit.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 1));
 					hit.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 1));
 					hit.sendMessage(
-							String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Usaram o Kit Thresh Em Voc\u00ea");
+							String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Usaram o Kit Thresh Em Voc\u00ea");
 				}
 			}
 		}

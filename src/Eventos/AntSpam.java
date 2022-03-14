@@ -8,7 +8,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class AntSpam implements Listener {
 	public static HashMap<Player, Long> chat;
@@ -17,7 +17,7 @@ public class AntSpam implements Listener {
 		AntSpam.chat = new HashMap<Player, Long>();
 	}
 
-	public AntSpam(final Main main) {
+	public AntSpam(final LightPvP main) {
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = false)
@@ -39,7 +39,7 @@ public class AntSpam implements Listener {
 			if (AntSpam.chat.get(p) < System.currentTimeMillis() || p.hasPermission("falar.sspam")) {
 				return;
 			}
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §eEvite flood no chat!");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½eEvite flood no chat!");
 			e.setCancelled(true);
 		}
 	}

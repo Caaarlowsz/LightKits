@@ -5,11 +5,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class TraderUtil {
 	public static void MsgSemTrader(final Player p) {
-		p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Sem Coins o Suficiente");
+		p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Sem Coins o Suficiente");
 	}
 
 	public static void darItemTroca(final Player p, final Material mat, final int modo) {

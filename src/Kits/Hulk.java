@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import Eventos.Basico;
 import Eventos.Cooldown;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Hulk implements Listener {
 	@EventHandler
@@ -30,7 +30,7 @@ public class Hulk implements Listener {
 					return;
 				}
 				if (p.getPassenger() != null) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o Outro Player Sair");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o Outro Player Sair");
 					return;
 				}
 				if (r.getPassenger() != null) {
@@ -38,8 +38,8 @@ public class Hulk implements Listener {
 				}
 				Cooldown.add(p, 6);
 				p.setPassenger((Entity) r);
-				r.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Um Hulk Prendeu Voc\u00ea Aperde SHIFT Para Se Desprender");
+				r.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Um Hulk Prendeu Voc\u00ea Aperde SHIFT Para Se Desprender");
 			}
 		}
 	}

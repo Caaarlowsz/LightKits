@@ -7,11 +7,11 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Stomper implements Listener {
-	public Stomper(final Main main) {
+	public Stomper(final LightPvP main) {
 	}
 
 	@EventHandler(priority = EventPriority.HIGH)
@@ -33,12 +33,12 @@ public class Stomper implements Listener {
 					}
 					if (plr.isSneaking()) {
 						plr.damage(20.0, (Entity) p);
-						plr.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7§oO Player §e "
-								+ p.getName() + " §7Tentou Te Stompar");
+						plr.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7ï¿½oO Player ï¿½e "
+								+ p.getName() + " ï¿½7Tentou Te Stompar");
 					} else {
 						plr.damage(e.getDamage(), (Entity) p);
-						plr.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-								+ " §6» §7§oVoc\u00ea Foi Stompado Por: " + p.getName());
+						plr.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+								+ " ï¿½6ï¿½ ï¿½7ï¿½oVoc\u00ea Foi Stompado Por: " + p.getName());
 					}
 				}
 			}

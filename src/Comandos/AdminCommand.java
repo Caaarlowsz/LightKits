@@ -22,7 +22,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import API.TitleAPI;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class AdminCommand implements Listener, CommandExecutor {
 	public static ArrayList<String> admin;
@@ -33,7 +33,7 @@ public class AdminCommand implements Listener, CommandExecutor {
 		AdminCommand.salvarinv = new HashMap<String, ItemStack[]>();
 	}
 
-	public AdminCommand(final Main main) {
+	public AdminCommand(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -100,13 +100,13 @@ public class AdminCommand implements Listener, CommandExecutor {
 		if (AdminCommand.admin.contains(p.getName()) && p.getItemInHand().getType() == Material.PAPER) {
 			final Damageable hp;
 			final Player p2 = (Player) (hp = (Damageable) e.getRightClicked());
-			p.sendMessage("§7-=-=-=-=-=-=-=-=-§c{§4+§c}§7-=-=-=-=-=-=-=-=-");
-			p.sendMessage("§4\u27bc §7Nick §c" + p2.getName());
-			p.sendMessage("§4\u27bc §7Life §c" + (int) hp.getHealth());
-			p.sendMessage("§4\u27bc §7Sopas §c" + getAmount(p2, Material.MUSHROOM_SOUP));
-			p.sendMessage("§4\u27bc §7Gm §c" + p2.getGameMode());
-			p.sendMessage("§4\u27bc §7Ip §c" + p2.getAddress().getHostName());
-			p.sendMessage("§7-=-=-=-=-=-=-=-=-§c{§4+§c}§7-=-=-=-=-=-=-=-=-");
+			p.sendMessage("ï¿½7-=-=-=-=-=-=-=-=-ï¿½c{ï¿½4+ï¿½c}ï¿½7-=-=-=-=-=-=-=-=-");
+			p.sendMessage("ï¿½4\u27bc ï¿½7Nick ï¿½c" + p2.getName());
+			p.sendMessage("ï¿½4\u27bc ï¿½7Life ï¿½c" + (int) hp.getHealth());
+			p.sendMessage("ï¿½4\u27bc ï¿½7Sopas ï¿½c" + getAmount(p2, Material.MUSHROOM_SOUP));
+			p.sendMessage("ï¿½4\u27bc ï¿½7Gm ï¿½c" + p2.getGameMode());
+			p.sendMessage("ï¿½4\u27bc ï¿½7Ip ï¿½c" + p2.getAddress().getHostName());
+			p.sendMessage("ï¿½7-=-=-=-=-=-=-=-=-ï¿½c{ï¿½4+ï¿½c}ï¿½7-=-=-=-=-=-=-=-=-");
 		}
 	}
 
@@ -129,7 +129,7 @@ public class AdminCommand implements Listener, CommandExecutor {
 				&& (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR)
 				&& p.getItemInHand().getType() == Material.MAGMA_CREAM) {
 			p.chat("/admin");
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.chat("/admin");
@@ -151,7 +151,7 @@ public class AdminCommand implements Listener, CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if (!(sender instanceof Player)) {
 			sender.sendMessage(
-					String.valueOf(String.valueOf(Main.prefix)) + " §7» Apenas Players Podem Executar Esse Comando");
+					String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ Apenas Players Podem Executar Esse Comando");
 			return true;
 		}
 		final Player p = (Player) sender;
@@ -171,7 +171,7 @@ public class AdminCommand implements Listener, CommandExecutor {
 				p.setGameMode(GameMode.SURVIVAL);
 				for (int i2 = 0; i2 < 10; ++i2) {
 				}
-				TitleAPI.sendFullTitle(p, 50, 50, 80, "§cAdmin", "§4§lOFF");
+				TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½cAdmin", "ï¿½4ï¿½lOFF");
 				AdminCommand.admin.remove(p.getName());
 				p.getInventory().setContents((ItemStack[]) AdminCommand.salvarinv.get(p.getName()));
 				p.updateInventory();
@@ -188,15 +188,15 @@ public class AdminCommand implements Listener, CommandExecutor {
 				p.setGameMode(GameMode.CREATIVE);
 				for (int i2 = 0; i2 < 10; ++i2) {
 				}
-				TitleAPI.sendFullTitle(p, 50, 50, 80, "§aAdmin", "§2§lON");
+				TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½aAdmin", "ï¿½2ï¿½lON");
 				AdminCommand.salvarinv.put(p.getName(), p.getInventory().getContents());
 				p.getInventory().clear();
-				this.darItem(p, Material.MAGMA_CREAM, "§b§lTroca-Rapida", 5);
-				this.darItem(p, Material.MUSHROOM_SOUP, "§b§lTestar Auto-Soup", 3);
-				this.darItem(p, Material.IRON_FENCE, "§b§lPrender (Player)", 7);
+				this.darItem(p, Material.MAGMA_CREAM, "ï¿½bï¿½lTroca-Rapida", 5);
+				this.darItem(p, Material.MUSHROOM_SOUP, "ï¿½bï¿½lTestar Auto-Soup", 3);
+				this.darItem(p, Material.IRON_FENCE, "ï¿½bï¿½lPrender (Player)", 7);
 				final ItemStack KitPadrao = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
 				final ItemMeta kKitPadrao = KitPadrao.getItemMeta();
-				kKitPadrao.setDisplayName("§c§lSAIR");
+				kKitPadrao.setDisplayName("ï¿½cï¿½lSAIR");
 				KitPadrao.setItemMeta(kKitPadrao);
 				p.getInventory().setItem(8, KitPadrao);
 			}

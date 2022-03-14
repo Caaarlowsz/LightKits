@@ -16,7 +16,7 @@ import org.bukkit.plugin.Plugin;
 import Eventos.Basico;
 import Eventos.Cooldown;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Terrorista implements Listener {
 	@EventHandler
@@ -33,10 +33,10 @@ public class Terrorista implements Listener {
 			p.getWorld().playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 15);
 			p.getWorld().playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
 			Cooldown.add(p, 25);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 				}
 			}, 500L);
 		}

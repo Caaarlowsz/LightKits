@@ -17,7 +17,7 @@ import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.DefaultFlag;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class KitAPI implements Listener {
 	public static final String Kitado;
@@ -131,7 +131,7 @@ public class KitAPI implements Listener {
 		KitAPI.refillTestTime = new HashMap<String, Integer>();
 	}
 
-	public KitAPI(final Main main) {
+	public KitAPI(final LightPvP main) {
 	}
 
 	public static void remove(final Player p) {
@@ -184,7 +184,7 @@ public class KitAPI implements Listener {
 	public static void sopa(final Player p) {
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta ksopa = sopa.getItemMeta();
-		ksopa.setDisplayName("§6Sopa");
+		ksopa.setDisplayName("ï¿½6Sopa");
 		sopa.setItemMeta(ksopa);
 		p.getInventory().addItem(new ItemStack[] { sopa });
 		p.getInventory().addItem(new ItemStack[] { sopa });
@@ -280,7 +280,7 @@ public class KitAPI implements Listener {
 		p.getInventory().setItem(15, cogum);
 		final ItemStack espada1 = new ItemStack(Material.COMPASS);
 		final ItemMeta kespada1 = espada1.getItemMeta();
-		kespada1.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6B\u00fassola");
+		kespada1.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6B\u00fassola");
 		espada1.setItemMeta(kespada1);
 		p.getInventory().setItem(8, espada1);
 	}
@@ -288,12 +288,12 @@ public class KitAPI implements Listener {
 	public static void sword(final Player p) {
 		final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta kespada = espada.getItemMeta();
-		kespada.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6Espada");
+		kespada.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6Espada");
 		kespada.addEnchant(Enchantment.DURABILITY, 10, true);
 		espada.setItemMeta(kespada);
 		p.getInventory().setItem(0, espada);
 		KitAPI.botas = new ItemStack(Material.LEATHER_CHESTPLATE);
-		(KitAPI.botasmeta = (LeatherArmorMeta) KitAPI.botas.getItemMeta()).setDisplayName("§7Peitoral");
+		(KitAPI.botasmeta = (LeatherArmorMeta) KitAPI.botas.getItemMeta()).setDisplayName("ï¿½7Peitoral");
 		KitAPI.botas.setItemMeta((ItemMeta) KitAPI.botasmeta);
 		p.getInventory().setBoots((ItemStack) null);
 		p.getInventory().setChestplate((ItemStack) null);

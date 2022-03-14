@@ -13,7 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Skit implements Listener, CommandExecutor {
 	public HashMap<String, ItemStack[]> kits;
@@ -46,29 +46,29 @@ public class Skit implements Listener, CommandExecutor {
 				return true;
 			}
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.prefix)
-						+ " >>§7 Sintaxe correta: §c/skit criar|aplicar <nome>|<distancia>");
+				p.sendMessage(String.valueOf(LightPvP.prefix)
+						+ " >>ï¿½7 Sintaxe correta: ï¿½c/skit criar|aplicar <nome>|<distancia>");
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("criar")) {
 				if (args.length == 1) {
-					p.sendMessage(String.valueOf(Main.prefix) + " >>§7 Sintaxe correta: §c/skit criar <nome>");
+					p.sendMessage(String.valueOf(LightPvP.prefix) + " >>ï¿½7 Sintaxe correta: ï¿½c/skit criar <nome>");
 					return true;
 				}
 				final String name = args[1];
 				this.kits.put(name, p.getInventory().getContents());
 				this.armor.put(name, p.getInventory().getArmorContents());
-				p.sendMessage(String.valueOf(Main.prefix) + " >>§7Kit§c " + args[1] + "§7 criado com sucesso!");
+				p.sendMessage(String.valueOf(LightPvP.prefix) + " >>ï¿½7Kitï¿½c " + args[1] + "ï¿½7 criado com sucesso!");
 				return true;
 			} else if (args[0].equalsIgnoreCase("aplicar")) {
 				if (args.length <= 2) {
 					p.sendMessage(
-							String.valueOf(Main.prefix) + " >>§7 Uso correto: §c/skit aplicar <nome> <distancia>");
+							String.valueOf(LightPvP.prefix) + " >>ï¿½7 Uso correto: ï¿½c/skit aplicar <nome> <distancia>");
 					return true;
 				}
 				final String name = args[1];
 				if (!this.kits.containsKey(name) && !this.armor.containsKey(name)) {
-					p.sendMessage(String.valueOf(Main.prefix) + " >>§7 Kit §c" + name + "§7 nao encontrado!");
+					p.sendMessage(String.valueOf(LightPvP.prefix) + " >>ï¿½7 Kit ï¿½c" + name + "ï¿½7 nao encontrado!");
 					return true;
 				}
 				if (this.isInt(args[2])) {
@@ -81,11 +81,11 @@ public class Skit implements Listener, CommandExecutor {
 						}
 					}
 					Bukkit.getServer()
-							.broadcastMessage(String.valueOf(Main.prefix) + " >>§7 Kit§c " + name
-									+ "§7 aplicado para jogadores em um raio de§c " + numero + "§7 blocos do staffer "
+							.broadcastMessage(String.valueOf(LightPvP.prefix) + " >>ï¿½7 Kitï¿½c " + name
+									+ "ï¿½7 aplicado para jogadores em um raio deï¿½c " + numero + "ï¿½7 blocos do staffer "
 									+ p.getName());
-					p.sendMessage(String.valueOf(Main.prefix) + " >>§7 Kit§c " + name
-							+ "§7 aplicado para jogadores em um raio de§c " + numero + "§7 blocos de voc\u00ea.");
+					p.sendMessage(String.valueOf(LightPvP.prefix) + " >>ï¿½7 Kitï¿½c " + name
+							+ "ï¿½7 aplicado para jogadores em um raio deï¿½c " + numero + "ï¿½7 blocos de voc\u00ea.");
 					return true;
 				}
 				return true;

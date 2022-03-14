@@ -19,16 +19,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import Coins.XpM;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Score.ScoreBoarding;
 
 public class StatusInventory implements Listener, CommandExecutor {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void guiKits(final Player p) {
-		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 27, "§8Status");
+		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 27, "ï¿½8Status");
 		final ItemStack event = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 0);
 		final ItemMeta eventv = event.getItemMeta();
-		eventv.setDisplayName(Main.prefix);
+		eventv.setDisplayName(LightPvP.prefix);
 		event.setItemMeta(eventv);
 		inv.setItem(0, event);
 		inv.setItem(1, event);
@@ -54,53 +54,53 @@ public class StatusInventory implements Listener, CommandExecutor {
 		inv.setItem(26, event);
 		ItemStack pyro1 = new ItemStack(Material.WATCH);
 		ItemMeta metapyro1 = pyro1.getItemMeta();
-		metapyro1.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §5Rank");
+		metapyro1.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½5Rank");
 		ArrayList descpyro1 = new ArrayList();
-		descpyro1.add("§7[" + ScoreBoarding.Rank(p) + "§7]");
+		descpyro1.add("ï¿½7[" + ScoreBoarding.Rank(p) + "ï¿½7]");
 		metapyro1.setLore((List) descpyro1);
 		pyro1.setItemMeta(metapyro1);
 		inv.setItem(10, pyro1);
 		pyro1 = new ItemStack(Material.COMPASS);
 		metapyro1 = pyro1.getItemMeta();
-		metapyro1.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» KDR");
+		metapyro1.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ KDR");
 		descpyro1 = new ArrayList();
-		descpyro1.add("§7[§8"
-				+ Main.plugin.getConfig().getInt(
+		descpyro1.add("ï¿½7[ï¿½8"
+				+ LightPvP.plugin.getConfig().getInt(
 						new StringBuilder("status.").append(p.getName().toLowerCase()).append(".kills").toString())
-				+ "§7/§8"
-				+ Main.plugin.getConfig().getInt(
+				+ "ï¿½7/ï¿½8"
+				+ LightPvP.plugin.getConfig().getInt(
 						new StringBuilder("status.").append(p.getName().toLowerCase()).append(".mortes").toString())
-				+ "§7]");
+				+ "ï¿½7]");
 		metapyro1.setLore((List) descpyro1);
 		pyro1.setItemMeta(metapyro1);
 		inv.setItem(11, pyro1);
 		pyro1 = new ItemStack(Material.ENCHANTMENT_TABLE);
 		metapyro1 = pyro1.getItemMeta();
-		metapyro1.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §eMoney");
+		metapyro1.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½eMoney");
 		descpyro1 = new ArrayList();
-		descpyro1.add("§7[§e" + XpM.getPlayerMoney(p) + "§7]");
+		descpyro1.add("ï¿½7[ï¿½e" + XpM.getPlayerMoney(p) + "ï¿½7]");
 		metapyro1.setLore((List) descpyro1);
 		pyro1.setItemMeta(metapyro1);
 		inv.setItem(13, pyro1);
 		pyro1 = new ItemStack(Material.DIAMOND);
 		metapyro1 = pyro1.getItemMeta();
-		metapyro1.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §aKills");
+		metapyro1.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½aKills");
 		descpyro1 = new ArrayList();
-		descpyro1.add("§7[§a"
-				+ Main.plugin.getConfig().getInt(
+		descpyro1.add("ï¿½7[ï¿½a"
+				+ LightPvP.plugin.getConfig().getInt(
 						new StringBuilder("status.").append(p.getName().toLowerCase()).append(".kills").toString())
-				+ "§7]");
+				+ "ï¿½7]");
 		metapyro1.setLore((List) descpyro1);
 		pyro1.setItemMeta(metapyro1);
 		inv.setItem(15, pyro1);
 		pyro1 = new ItemStack(Material.COAL);
 		metapyro1 = pyro1.getItemMeta();
-		metapyro1.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §cDeaths");
+		metapyro1.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½cDeaths");
 		descpyro1 = new ArrayList();
-		descpyro1.add("§7[§c"
-				+ Main.plugin.getConfig().getInt(
+		descpyro1.add("ï¿½7[ï¿½c"
+				+ LightPvP.plugin.getConfig().getInt(
 						new StringBuilder("status.").append(p.getName().toLowerCase()).append(".mortes").toString())
-				+ "§7]");
+				+ "ï¿½7]");
 		metapyro1.setLore((List) descpyro1);
 		pyro1.setItemMeta(metapyro1);
 		inv.setItem(16, pyro1);
@@ -119,7 +119,7 @@ public class StatusInventory implements Listener, CommandExecutor {
 	@EventHandler
 	public void onPlayerCLickInventry(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equalsIgnoreCase("§8Status") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("ï¿½8Status") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
 			if (e.getSlot() == 7) {

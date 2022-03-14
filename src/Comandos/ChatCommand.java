@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerChatEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class ChatCommand implements Listener, CommandExecutor {
 	public static boolean chat1;
@@ -23,7 +23,7 @@ public class ChatCommand implements Listener, CommandExecutor {
 	public void onPlayerChat(final AsyncPlayerChatEvent e) {
 		if (!e.getPlayer().hasPermission("falar.chat") && !ChatCommand.chat1) {
 			e.setCancelled(true);
-			e.getPlayer().sendMessage(" §cVoce nao pode falar com o Chat Desativado!");
+			e.getPlayer().sendMessage(" ï¿½cVoce nao pode falar com o Chat Desativado!");
 		}
 	}
 
@@ -44,18 +44,18 @@ public class ChatCommand implements Listener, CommandExecutor {
 				if (args.length == 1) {
 					if (args[0].equalsIgnoreCase("off")) {
 						ChatCommand.chat1 = false;
-						Bukkit.broadcastMessage("§4§lAVISO: §7O Chat foi Desativado!");
+						Bukkit.broadcastMessage("ï¿½4ï¿½lAVISO: ï¿½7O Chat foi Desativado!");
 					} else if (args[0].equalsIgnoreCase("on")) {
 						ChatCommand.chat1 = true;
-						Bukkit.broadcastMessage("§4§lAVISO: §7O Chat foi Ativado!");
+						Bukkit.broadcastMessage("ï¿½4ï¿½lAVISO: ï¿½7O Chat foi Ativado!");
 					}
 				} else {
 					sender.sendMessage(
-							String.valueOf(Main.prefix) + " §cOps! Use isso De Maneira Correta: §7/chat (on/off)");
+							String.valueOf(LightPvP.prefix) + " ï¿½cOps! Use isso De Maneira Correta: ï¿½7/chat (on/off)");
 				}
 			} else {
 				sender.sendMessage(
-						String.valueOf(Main.prefix) + " §cOps! Use isso De Maneira Correta: §7/chat (on/off)");
+						String.valueOf(LightPvP.prefix) + " ï¿½cOps! Use isso De Maneira Correta: ï¿½7/chat (on/off)");
 			}
 		}
 		return true;

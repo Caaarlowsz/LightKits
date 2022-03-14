@@ -15,17 +15,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class DiamondJump implements Listener {
-	public static Main plugin;
+	public static LightPvP plugin;
 	public static ArrayList<String> Diamante;
 
 	static {
 		DiamondJump.Diamante = new ArrayList<String>();
 	}
 
-	public DiamondJump(final Main main) {
+	public DiamondJump(final LightPvP main) {
 		DiamondJump.plugin = main;
 	}
 

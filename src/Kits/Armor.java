@@ -18,7 +18,7 @@ import org.bukkit.plugin.Plugin;
 import Eventos.Basico;
 import Eventos.Cooldown;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Armor implements Listener {
 	public static HashMap<String, ItemStack[]> salvararmor;
@@ -47,14 +47,14 @@ public class Armor implements Listener {
 			Armor.salvararmor.put(p.getName(), p.getInventory().getArmorContents());
 			Basico.tirarArmadura(p);
 			p.sendMessage(
-					String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Agora Voc\u00ea Tem uma Armadura Temporaria");
+					String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Agora Voc\u00ea Tem uma Armadura Temporaria");
 			p.getInventory()
 					.setArmorContents(new ItemStack[] { darArmaduraI(Material.GOLD_HELMET),
 							darArmaduraI(Material.GOLD_CHESTPLATE), darArmaduraI(Material.GOLD_LEGGINGS),
 							darArmaduraI(Material.GOLD_BOOTS) });
 			p.updateInventory();
 			Cooldown.add(p, 25);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Basico.tirarArmadura(p);
@@ -63,10 +63,10 @@ public class Armor implements Listener {
 					p.updateInventory();
 				}
 			}, 200L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 				}
 			}, 500L);
 		}

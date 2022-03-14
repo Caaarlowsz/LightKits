@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Phantom implements Listener {
@@ -24,7 +24,7 @@ public class Phantom implements Listener {
 		Phantom.cooldown = new HashMap<String, Long>();
 	}
 
-	public Phantom(final Main main) {
+	public Phantom(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -39,20 +39,20 @@ public class Phantom implements Listener {
 					p.setAllowFlight(true);
 					p.setFlying(true);
 					p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 1));
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-							+ " §6» §7 Agora Voc\u00ea Pode Voar Mas Cuidado");
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+							+ " ï¿½6ï¿½ ï¿½7 Agora Voc\u00ea Pode Voar Mas Cuidado");
+					Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 						@Override
 						public void run() {
 							p.setFlying(false);
 							p.setAllowFlight(false);
 							p.sendMessage(
-									String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voc\u00ea Est\u00e1 Caindo");
+									String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voc\u00ea Est\u00e1 Caindo");
 						}
 					}, 150L);
 					Phantom.cooldown.put(p.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(60L));
 				} else {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o CoolDown Terminar");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o CoolDown Terminar");
 				}
 			}
 		}

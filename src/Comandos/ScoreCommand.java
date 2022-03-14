@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class ScoreCommand implements CommandExecutor, Listener {
 
@@ -17,13 +17,13 @@ public class ScoreCommand implements CommandExecutor, Listener {
 			return true;
 		}
 		Player p = (Player) sender;
-		if (Main.score.contains(p.getName())) {
-			Main.score.remove(p.getName());
-			p.sendMessage(Main.prefix + " §7Sua scoreboard foi Ativada!");
+		if (LightPvP.score.contains(p.getName())) {
+			LightPvP.score.remove(p.getName());
+			p.sendMessage(LightPvP.prefix + " ï¿½7Sua scoreboard foi Ativada!");
 
 		} else {
-			Main.score.add(p.getName());
-			p.sendMessage(Main.prefix + " §8Sua scoreboard foi Desativada!");
+			LightPvP.score.add(p.getName());
+			p.sendMessage(LightPvP.prefix + " ï¿½8Sua scoreboard foi Desativada!");
 		}
 
 		return false;

@@ -6,18 +6,18 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class HelpCommand implements Listener, CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player p = (Player) sender;
 		cmd.getName().equalsIgnoreCase("help");
 		p.sendMessage(" ");
-		p.sendMessage("§aOla, Bem-Vindo a ferramente de §aAjuda§7 do §7" + Main.prefix + "!");
+		p.sendMessage("ï¿½aOla, Bem-Vindo a ferramente de ï¿½aAjudaï¿½7 do ï¿½7" + LightPvP.prefix + "!");
 		p.sendMessage(" ");
-		p.sendMessage("§7Deseja tornar-se §bYoutuber§7? Utilize o comando: §b/youtuber§7.");
+		p.sendMessage("ï¿½7Deseja tornar-se ï¿½bYoutuberï¿½7? Utilize o comando: ï¿½b/youtuberï¿½7.");
 		p.sendMessage(" ");
-		p.sendMessage("§7Deseja Aplicar-se na staff? Utilize o comando §c/aplicar§7.");
+		p.sendMessage("ï¿½7Deseja Aplicar-se na staff? Utilize o comando ï¿½c/aplicarï¿½7.");
 		return false;
 	}
 }

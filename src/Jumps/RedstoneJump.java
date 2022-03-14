@@ -15,17 +15,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class RedstoneJump implements Listener {
-	public static Main plugin;
+	public static LightPvP plugin;
 	public static ArrayList<String> RedStone;
 
 	static {
 		RedstoneJump.RedStone = new ArrayList<String>();
 	}
 
-	public RedstoneJump(final Main main) {
+	public RedstoneJump(final LightPvP main) {
 		RedstoneJump.plugin = main;
 	}
 

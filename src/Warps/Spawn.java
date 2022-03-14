@@ -18,7 +18,7 @@ import org.bukkit.potion.PotionEffect;
 import com.connorlinfoot.titleapi.TitleAPI;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Spawn implements Listener, CommandExecutor {
@@ -28,9 +28,9 @@ public class Spawn implements Listener, CommandExecutor {
 	public static ItemMeta warpsmeta;
 	public static ItemStack loja;
 	public static ItemMeta lojameta;
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public Spawn(final Main main) {
+	public Spawn(final LightPvP main) {
 		Spawn.plugin = main;
 	}
 
@@ -43,7 +43,7 @@ public class Spawn implements Listener, CommandExecutor {
 			p.getInventory().setChestplate((ItemStack) null);
 			p.getInventory().setLeggings((ItemStack) null);
 			p.getInventory().setHelmet((ItemStack) null);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportando Aguarde");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportando Aguarde");
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Spawn.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -67,15 +67,15 @@ public class Spawn implements Listener, CommandExecutor {
 					p.setFireTicks(0);
 					p.setFoodLevel(20000);
 					p.setHealth(20.0);
-					KitAPI.setitem(p, Material.ENDER_CHEST, "§a\u2022 Kits §a\u2022", 4, Enchantment.DAMAGE_ALL, 0,
+					KitAPI.setitem(p, Material.ENDER_CHEST, "ï¿½a\u2022 Kits ï¿½a\u2022", 4, Enchantment.DAMAGE_ALL, 0,
 							false);
-					KitAPI.setitem(p, Material.ENCHANTED_BOOK, "§9\u2022 Warps \u2022", 5, Enchantment.DAMAGE_ALL, 0,
+					KitAPI.setitem(p, Material.ENCHANTED_BOOK, "ï¿½9\u2022 Warps \u2022", 5, Enchantment.DAMAGE_ALL, 0,
 							false);
-					KitAPI.setitem(p, Material.PAPER, "§b\u2022 Loja \u2022", 3, Enchantment.DAMAGE_ALL, 0, false);
-					KitAPI.setitem(p, Material.JUKEBOX, "§c\u2022 Extras \u2022", 6, Enchantment.DAMAGE_ALL, 0, false);
-					KitAPI.setitem(p, Material.EXP_BOTTLE, "§c\u2022 Status \u2022", 2, Enchantment.DAMAGE_ALL, 0,
+					KitAPI.setitem(p, Material.PAPER, "ï¿½b\u2022 Loja \u2022", 3, Enchantment.DAMAGE_ALL, 0, false);
+					KitAPI.setitem(p, Material.JUKEBOX, "ï¿½c\u2022 Extras \u2022", 6, Enchantment.DAMAGE_ALL, 0, false);
+					KitAPI.setitem(p, Material.EXP_BOTTLE, "ï¿½c\u2022 Status \u2022", 2, Enchantment.DAMAGE_ALL, 0,
 							false);
-					TitleAPI.sendFullTitle(p, 50, 50, 80, "§aVoce foi para o", "§b§lSPAWN");
+					TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½aVoce foi para o", "ï¿½bï¿½lSPAWN");
 					for (final PotionEffect effect : p.getActivePotionEffects()) {
 						p.removePotionEffect(effect.getType());
 					}

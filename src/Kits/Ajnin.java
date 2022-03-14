@@ -15,7 +15,7 @@ import org.bukkit.plugin.Plugin;
 import Eventos.Basico;
 import Eventos.Cooldown;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Ajnin implements Listener {
 	public HashMap<Player, Player> ajinhash;
@@ -33,7 +33,7 @@ public class Ajnin implements Listener {
 			final Player t = (Player) e.getEntity();
 			if (Habilidade.getAbility(p).equalsIgnoreCase("Ajnin")) {
 				this.ajinhash.put(p, t);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(),
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {
@@ -57,19 +57,19 @@ public class Ajnin implements Listener {
 				}
 				if (p.getLocation().distance(t.getLocation()) < 200.0) {
 					t.teleport(p.getLocation());
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportado");
 					Cooldown.add(p, 3);
-					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(),
+					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
-									p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-											+ " §6» §7 Seu CoolDown Foi Terminado");
+									p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+											+ " ï¿½6ï¿½ ï¿½7 Seu CoolDown Foi Terminado");
 								}
 							}, 140L);
 				} else {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-							+ " §6» §7O Ultimo Player Hitado Est\u00e1 Muito Longe");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+							+ " ï¿½6ï¿½ ï¿½7O Ultimo Player Hitado Est\u00e1 Muito Longe");
 				}
 			}
 		}

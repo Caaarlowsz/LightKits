@@ -20,7 +20,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class DeshFire implements Listener {
@@ -41,7 +41,7 @@ public class DeshFire implements Listener {
 		DeshFire.cooldownm = new ArrayList<Player>();
 	}
 
-	public DeshFire(final Main main) {
+	public DeshFire(final LightPvP main) {
 		this.boost = Integer.valueOf(6);
 	}
 
@@ -56,7 +56,7 @@ public class DeshFire implements Listener {
 				event.setCancelled(true);
 			}
 			if (DeshFire.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o CoolDown Terminar");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o CoolDown Terminar");
 				return;
 			}
 			DeshFire.cooldownm.add(p);
@@ -92,19 +92,19 @@ public class DeshFire implements Listener {
 			p.getInventory().setLeggings(Calss);
 			p.getInventory().setBoots(Bota);
 			p.updateInventory();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getInventory().setArmorContents((ItemStack[]) null);
 					p.updateInventory();
 				}
 			}, 50L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					DeshFire.cooldownm.remove(p);
 					DeshFire.Deshfire.remove(p.getName());
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 5.0f, 5.0f);
 				}
 			}, 700L);

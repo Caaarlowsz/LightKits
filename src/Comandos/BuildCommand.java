@@ -12,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public final class BuildCommand implements Listener, CommandExecutor {
 	public static ArrayList<Player> embuild;
@@ -28,31 +28,31 @@ public final class BuildCommand implements Listener, CommandExecutor {
 				if (args.length == 0) {
 					if (!BuildCommand.embuild.contains(p)) {
 						BuildCommand.embuild.add(p);
-						p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §7Build §a§lATIVADO§7!");
+						p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½7Build ï¿½aï¿½lATIVADOï¿½7!");
 					} else {
 						BuildCommand.embuild.remove(p);
-						p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §7Build §c§lDESATIVADO§7!");
+						p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½7Build ï¿½cï¿½lDESATIVADOï¿½7!");
 					}
 				} else {
 					final Player t = Bukkit.getPlayer(args[0]);
 					if (t == null) {
 						p.sendMessage(
-								String.valueOf(String.valueOf(Main.prefix)) + " §7» §cEste Player Est\u00e1 Offline");
+								String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cEste Player Est\u00e1 Offline");
 						return true;
 					}
 					if (!BuildCommand.embuild.contains(t)) {
 						BuildCommand.embuild.add(t);
-						p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §7Build §a§lATIVADO§7 Para "
+						p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½7Build ï¿½aï¿½lATIVADOï¿½7 Para "
 								+ t.getName());
 					} else {
 						BuildCommand.embuild.remove(t);
-						p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-								+ " §7» §7Build §c§lDESATIVADO§7 Para " + t.getName());
+						p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+								+ " ï¿½7ï¿½ ï¿½7Build ï¿½cï¿½lDESATIVADOï¿½7 Para " + t.getName());
 					}
 				}
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §7» Desculpe, Mas voce precisa do grupo §5Moderador§7 ou Superior para executar isto.");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½7ï¿½ Desculpe, Mas voce precisa do grupo ï¿½5Moderadorï¿½7 ou Superior para executar isto.");
 			}
 		}
 		return false;

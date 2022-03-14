@@ -10,13 +10,13 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KillsdeathsmoneyAPI;
 import net.md_5.bungee.api.ChatColor;
 
 public class ScoreBoarding implements Listener {
 
-	public static Main plugin;
+	public static LightPvP plugin;
 
 	public static String Rank(Player p) {
 		double a = KillsdeathsmoneyAPI.getKills(p);
@@ -180,7 +180,7 @@ public class ScoreBoarding implements Listener {
 
 		if (animar == 1) {
 
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));
@@ -197,7 +197,7 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 2) {
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));
@@ -215,7 +215,7 @@ public class ScoreBoarding implements Listener {
 		}
 
 		if (animar == 3) {
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));
@@ -233,7 +233,7 @@ public class ScoreBoarding implements Listener {
 		}
 
 		if (animar == 4) {
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));
@@ -251,7 +251,7 @@ public class ScoreBoarding implements Listener {
 		}
 
 		if (animar == 5) {
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));
@@ -269,7 +269,7 @@ public class ScoreBoarding implements Listener {
 		}
 
 		if (animar == 6) {
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));
@@ -287,7 +287,7 @@ public class ScoreBoarding implements Listener {
 		}
 
 		if (animar == 7) {
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));
@@ -305,7 +305,7 @@ public class ScoreBoarding implements Listener {
 		}
 
 		if (animar == 8) {
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));
@@ -322,7 +322,7 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 9) {
-			SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			SimpleScoreboard scoreboard = new SimpleScoreboard(LightPvP.prefix);
 			scoreboard.add("     §aBem-Vindo!");
 			scoreboard.blankLine();
 			scoreboard.add("§aKills ➜ §7" + KillsdeathsmoneyAPI.getKills(p));

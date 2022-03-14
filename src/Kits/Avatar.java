@@ -29,7 +29,7 @@ import org.bukkit.util.Vector;
 import Eventos.Basico;
 import Eventos.Cooldown;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Avatar implements Listener {
 	public static List<String> arAvatar;
@@ -50,19 +50,19 @@ public class Avatar implements Listener {
 		if (Habilidade.getAbility(p).equalsIgnoreCase("Avatar")) {
 			final ItemStack ar = new ItemStack(Material.WOOL);
 			final ItemMeta arm = ar.getItemMeta();
-			arm.setDisplayName("§7Kit §eAvatar§7(§f§lAR§7)");
+			arm.setDisplayName("ï¿½7Kit ï¿½eAvatarï¿½7(ï¿½fï¿½lARï¿½7)");
 			ar.setItemMeta(arm);
 			final ItemStack agua = new ItemStack(Material.LAPIS_BLOCK);
 			final ItemMeta aguam = agua.getItemMeta();
-			aguam.setDisplayName("§7Kit §eAvatar§7(§1§lAGUA§7)");
+			aguam.setDisplayName("ï¿½7Kit ï¿½eAvatarï¿½7(ï¿½1ï¿½lAGUAï¿½7)");
 			agua.setItemMeta(aguam);
 			final ItemStack terra = new ItemStack(Material.GRASS);
 			final ItemMeta terram = terra.getItemMeta();
-			terram.setDisplayName("§7Kit §eAvatar§7(§2§lTERRA§7)");
+			terram.setDisplayName("ï¿½7Kit ï¿½eAvatarï¿½7(ï¿½2ï¿½lTERRAï¿½7)");
 			terra.setItemMeta(terram);
 			final ItemStack fogo = new ItemStack(Material.REDSTONE_BLOCK);
 			final ItemMeta fogom = fogo.getItemMeta();
-			fogom.setDisplayName("§7Kit §eAvatar§7(§4FOGO§7)");
+			fogom.setDisplayName("ï¿½7Kit ï¿½eAvatarï¿½7(ï¿½4FOGOï¿½7)");
 			fogo.setItemMeta(fogom);
 			if ((e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK)
 					&& p.getItemInHand().getType() == Material.BEACON) {
@@ -119,11 +119,11 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("ar", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			h.setMetadata("ar", (MetadataValue) new FixedMetadataValue(LightPvP.plugin, (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 				}
 			}, 600L);
 		}
@@ -164,11 +164,11 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("agua", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			h.setMetadata("agua", (MetadataValue) new FixedMetadataValue(LightPvP.plugin, (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 				}
 			}, 600L);
 		}
@@ -208,11 +208,11 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("terra", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			h.setMetadata("terra", (MetadataValue) new FixedMetadataValue(LightPvP.plugin, (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 				}
 			}, 600L);
 		}
@@ -255,11 +255,11 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("fogo", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			h.setMetadata("fogo", (MetadataValue) new FixedMetadataValue(LightPvP.plugin, (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 				}
 			}, 600L);
 		}

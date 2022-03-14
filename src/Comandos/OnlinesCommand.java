@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class OnlinesCommand implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -16,8 +16,8 @@ public class OnlinesCommand implements CommandExecutor, Listener {
 			return true;
 		}
 		final Player p = (Player) sender;
-		p.sendMessage(String.valueOf(Main.prefix) + " §aJogadores online no momento: §3"
-				+ Bukkit.getOnlinePlayers().length + "§9/§3" + Bukkit.getMaxPlayers());
+		p.sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½aJogadores online no momento: ï¿½3"
+				+ Bukkit.getOnlinePlayers().length + "ï¿½9/ï¿½3" + Bukkit.getMaxPlayers());
 		return false;
 	}
 }

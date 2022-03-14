@@ -18,15 +18,15 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class JellyFish implements Listener {
 	ArrayList<Block> naoescorrer;
 	public static String naocolocaragua;
 
 	static {
-		JellyFish.naocolocaragua = String.valueOf(String.valueOf(Main.prefix))
-				+ " §6» §7N\u00e3o Se Pode Colocar \u00c0gua Aqui";
+		JellyFish.naocolocaragua = String.valueOf(String.valueOf(LightPvP.prefix))
+				+ " ï¿½6ï¿½ ï¿½7N\u00e3o Se Pode Colocar \u00c0gua Aqui";
 	}
 
 	public JellyFish() {
@@ -48,7 +48,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance,
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -64,7 +64,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance,
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -80,7 +80,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance,
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -96,7 +96,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance,
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -112,7 +112,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance,
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -128,7 +128,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance,
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {

@@ -9,10 +9,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Basico implements Listener {
-	public Basico(final Main main) {
+	public Basico(final LightPvP main) {
 	}
 
 	public static void tirarArmadura(final Player p) {
@@ -23,8 +23,8 @@ public class Basico implements Listener {
 	}
 
 	public static void MensagemCooldown(final Player p) {
-		p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde §6" + Cooldown.CoolDown(p)
-				+ " §7Segundos Para Usar Novamente");
+		p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde ï¿½6" + Cooldown.CoolDown(p)
+				+ " ï¿½7Segundos Para Usar Novamente");
 	}
 
 	public static String getKit(final Player p) {

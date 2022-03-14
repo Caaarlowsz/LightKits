@@ -14,13 +14,13 @@ import org.bukkit.plugin.Plugin;
 
 import API.ChatInterativoAPI;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class ReportCommand implements CommandExecutor {
 	public ArrayList<String> reported;
-	private Main plugin;
+	private LightPvP plugin;
 
-	public ReportCommand(final Main plugin) {
+	public ReportCommand(final LightPvP plugin) {
 		this.reported = new ArrayList<String>();
 		this.plugin = plugin;
 	}
@@ -29,7 +29,7 @@ public class ReportCommand implements CommandExecutor {
 			final String[] args) {
 		final Player p = (Player) sender;
 		if (!(sender instanceof Player)) {
-			sender.sendMessage("§cVoce nao pode usar isso no console");
+			sender.sendMessage("ï¿½cVoce nao pode usar isso no console");
 			return false;
 		}
 		if (commandLabel.equalsIgnoreCase("report")) {
@@ -37,32 +37,32 @@ public class ReportCommand implements CommandExecutor {
 				final Player target = p.getServer().getPlayer(args[0]);
 				if (target != null) {
 					if (this.reported.contains(p.getName())) {
-						p.sendMessage("§7Voce ja efetuou um report, por favor aguarde!");
+						p.sendMessage("ï¿½7Voce ja efetuou um report, por favor aguarde!");
 						return true;
 					}
 					final String reportMsg = StringUtils.join((Object[]) Arrays.copyOfRange(args, 1, args.length), " ");
 					this.reported.add(p.getName());
-					p.sendMessage("§7O Report do jogador §6" + target.getName()
-							+ "foi enviado para nossa equipe. §7Pelo motivo §6" + reportMsg + " ");
+					p.sendMessage("ï¿½7O Report do jogador ï¿½6" + target.getName()
+							+ "foi enviado para nossa equipe. ï¿½7Pelo motivo ï¿½6" + reportMsg + " ");
 					Player[] arrayOfPlayer;
 					for (int j = (arrayOfPlayer = Bukkit.getOnlinePlayers()).length, i = 0; i < j; ++i) {
 						final Player s = arrayOfPlayer[i];
 						if (s.hasPermission("ver.report")) {
 							s.playSound(s.getLocation(), Sound.LEVEL_UP, 15.0f, 1.0f);
-							s.sendMessage("§c");
-							s.sendMessage("§c§m--->-----------------------------<---");
-							s.sendMessage("§c");
-							s.sendMessage("§c             §c§lNOVO REPORT!§c               ");
-							s.sendMessage("§c");
-							s.sendMessage("    §cAcusado: §c" + target.getName());
-							s.sendMessage("     §cReport de: §a" + p.getName());
-							s.sendMessage("       §cMotivo: §e" + reportMsg);
-							s.sendMessage("         §cKit: §a" + Habilidade.getAbility(p));
-							s.sendMessage("§c");
-							ChatInterativoAPI.Comando(s.getName(), "§7Teleporte-se ate ele §b§lCLIQUE",
-									"/tp " + target.getName(), "§eTeleporte Rapido. §7(Clique)");
-							s.sendMessage("§c§m--->-----------------------------<---");
-							s.sendMessage("§c");
+							s.sendMessage("ï¿½c");
+							s.sendMessage("ï¿½cï¿½m--->-----------------------------<---");
+							s.sendMessage("ï¿½c");
+							s.sendMessage("ï¿½c             ï¿½cï¿½lNOVO REPORT!ï¿½c               ");
+							s.sendMessage("ï¿½c");
+							s.sendMessage("    ï¿½cAcusado: ï¿½c" + target.getName());
+							s.sendMessage("     ï¿½cReport de: ï¿½a" + p.getName());
+							s.sendMessage("       ï¿½cMotivo: ï¿½e" + reportMsg);
+							s.sendMessage("         ï¿½cKit: ï¿½a" + Habilidade.getAbility(p));
+							s.sendMessage("ï¿½c");
+							ChatInterativoAPI.Comando(s.getName(), "ï¿½7Teleporte-se ate ele ï¿½bï¿½lCLIQUE",
+									"/tp " + target.getName(), "ï¿½eTeleporte Rapido. ï¿½7(Clique)");
+							s.sendMessage("ï¿½cï¿½m--->-----------------------------<---");
+							s.sendMessage("ï¿½c");
 							Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin,
 									(Runnable) new Runnable() {
 										@Override
@@ -73,10 +73,10 @@ public class ReportCommand implements CommandExecutor {
 						}
 					}
 				} else {
-					p.sendMessage("§7Este jogador nao esta conectado!");
+					p.sendMessage("ï¿½7Este jogador nao esta conectado!");
 				}
 			} else {
-				p.sendMessage("§7Voce usou de maneira incorreta, por favor use: §e/report (jogador) (motivo)");
+				p.sendMessage("ï¿½7Voce usou de maneira incorreta, por favor use: ï¿½e/report (jogador) (motivo)");
 			}
 		}
 		return false;

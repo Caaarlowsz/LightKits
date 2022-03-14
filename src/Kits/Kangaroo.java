@@ -17,14 +17,14 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Kangaroo implements Listener {
 	ArrayList<String> tempo;
 	ArrayList<String> naofugir;
 
-	public Kangaroo(final Main main) {
+	public Kangaroo(final LightPvP main) {
 		this.tempo = new ArrayList<String>();
 		this.naofugir = new ArrayList<String>();
 	}
@@ -58,8 +58,8 @@ public class Kangaroo implements Listener {
 				p.setVelocity(vector);
 			}
 			if (this.naofugir.contains(p.getName())) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Pode Utilizar Seu Kit Em Combate");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Pode Utilizar Seu Kit Em Combate");
 			}
 		}
 	}
@@ -98,7 +98,7 @@ public class Kangaroo implements Listener {
 			if (kangaroo instanceof Player && p instanceof Player
 					&& kangaroo.getInventory().contains(Material.FIREWORK)) {
 				this.naofugir.add(kangaroo.getName());
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(),
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {

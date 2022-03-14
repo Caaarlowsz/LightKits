@@ -8,7 +8,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class PluginsEvent implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
@@ -36,8 +36,8 @@ public class PluginsEvent implements Listener {
 		plugins.add("minecraft:me");
 		for (final String Loop : plugins) {
 			if (msg[0].equalsIgnoreCase("/" + Loop)) {
-				e.getPlayer().sendMessage("  §7Plugin criado pelo EhOMarcello");
-				e.getPlayer().sendMessage(" §7Servidor Utilizando " + Main.prefix);
+				e.getPlayer().sendMessage("  ï¿½7Plugin criado pelo EhOMarcello");
+				e.getPlayer().sendMessage(" ï¿½7Servidor Utilizando " + LightPvP.prefix);
 				e.setCancelled(true);
 			}
 		}

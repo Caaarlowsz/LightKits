@@ -6,11 +6,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Fisherman implements Listener {
-	public Fisherman(final Main main) {
+	public Fisherman(final LightPvP main) {
 	}
 
 	@EventHandler

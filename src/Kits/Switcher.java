@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Switcher implements Listener {
 	@EventHandler
@@ -41,7 +41,7 @@ public class Switcher implements Listener {
 		if (e.getEntity().getKiller() instanceof Player && Habilidade.getAbility(matou).equalsIgnoreCase("Switcher")) {
 			final ItemStack item = new ItemStack(Material.SNOW_BALL);
 			final ItemMeta itemm = item.getItemMeta();
-			itemm.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Switcher");
+			itemm.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Switcher");
 			item.setItemMeta(itemm);
 			matou.getInventory().addItem(new ItemStack[] { item });
 			matou.updateInventory();

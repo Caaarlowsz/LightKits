@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class IPCommand implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -15,7 +15,7 @@ public class IPCommand implements CommandExecutor, Listener {
 			return true;
 		}
 		final Player p = (Player) sender;
-		p.sendMessage(String.valueOf(Main.prefix) + " §cO Ip de nosso Servidor \u00e9: §2 " + Main.ipsv);
+		p.sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½cO Ip de nosso Servidor \u00e9: ï¿½2 " + LightPvP.ipsv);
 		return false;
 	}
 }

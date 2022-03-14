@@ -21,7 +21,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Gladiator implements Listener {
@@ -33,7 +33,7 @@ public class Gladiator implements Listener {
 	private int glad1;
 	private int glad2;
 
-	public Gladiator(final Main plugin) {
+	public Gladiator(final LightPvP plugin) {
 		this.gladiatorbloco = new ArrayList<Block>();
 		this.gladblock = new HashMap<Block, Player>();
 		this.lutando = new HashMap<Player, Player>();
@@ -54,8 +54,8 @@ public class Gladiator implements Listener {
 				final Location loc3 = new Location(p.getWorld(), (double) (p.getLocation().getBlockX() - 8),
 						(double) (p.getLocation().getBlockY() + 82), (double) (p.getLocation().getBlockZ() - 8));
 				if (this.lutando.containsKey(p) || this.lutando.containsKey(r)) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-							+ " §6» §7Voc\u00ea Ja Est\u00e1 Em Uma Arena Gladiator");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+							+ " ï¿½6ï¿½ ï¿½7Voc\u00ea Ja Est\u00e1 Em Uma Arena Gladiator");
 					return;
 				}
 				final List<Location> cuboid = new ArrayList<Location>();
@@ -64,8 +64,8 @@ public class Gladiator implements Listener {
 						for (int bY = -1; bY <= 10; ++bY) {
 							final Block b = loc.clone().add((double) bX, (double) bY, (double) bZ).getBlock();
 							if (!b.isEmpty()) {
-								p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-										+ " §6» §7N\u00e3o Se Pode Criar Uma Arena Neste Local");
+								p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+										+ " ï¿½6ï¿½ ï¿½7N\u00e3o Se Pode Criar Uma Arena Neste Local");
 								return;
 							}
 							if (bY == 10) {
@@ -92,13 +92,13 @@ public class Gladiator implements Listener {
 				r.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 110, 5));
 				this.lutando.put(p, r);
 				this.lutando.put(r, p);
-				this.glad1 = Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(),
+				this.glad1 = Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {
 							}
 						}, 4800L);
-				this.glad2 = Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(),
+				this.glad2 = Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {
@@ -139,8 +139,8 @@ public class Gladiator implements Listener {
 			final Player q = Bukkit.getPlayer(nome);
 			this.lutando.remove(p);
 			this.lutando.remove(q);
-			q.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7O Player " + p.getDisplayName()
-					+ " §fDeslogou No x1");
+			q.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7O Player " + p.getDisplayName()
+					+ " ï¿½fDeslogou No x1");
 			q.teleport((Location) this.lugar.get(q));
 			Bukkit.getScheduler().cancelTask(this.glad1);
 			Bukkit.getScheduler().cancelTask(this.glad2);
@@ -159,9 +159,9 @@ public class Gladiator implements Listener {
 		if (this.lutando.containsKey(p)) {
 			final String nome = this.lutando.get(p).getName();
 			final Player m = Bukkit.getPlayer(nome);
-			m.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7 Voc\u00ea Ganhou o x1 Contra §e"
+			m.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7 Voc\u00ea Ganhou o x1 Contra ï¿½e"
 					+ p.getDisplayName());
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voc\u00ea Perdeu o x1 Contra §e"
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voc\u00ea Perdeu o x1 Contra ï¿½e"
 					+ m.getDisplayName());
 			this.lutando.remove(p);
 			this.lutando.remove(m);
@@ -183,8 +183,8 @@ public class Gladiator implements Listener {
 		final Player p = e.getPlayer();
 		if (this.lutando.containsKey(p)) {
 			e.setCancelled(true);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-					+ " §6» §7N\u00e3o Se Pode Usar Comandos Em Uma Arena Gladiator");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+					+ " ï¿½6ï¿½ ï¿½7N\u00e3o Se Pode Usar Comandos Em Uma Arena Gladiator");
 		}
 	}
 }

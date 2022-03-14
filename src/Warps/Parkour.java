@@ -22,13 +22,13 @@ import org.bukkit.potion.PotionEffectType;
 import com.connorlinfoot.titleapi.TitleAPI;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Parkour implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public Parkour(final Main main) {
+	public Parkour(final LightPvP main) {
 		Parkour.plugin = main;
 	}
 
@@ -48,11 +48,11 @@ public class Parkour implements Listener, CommandExecutor {
 			lobby.setYaw((float) Parkour.plugin.getConfig().getDouble("parkour.yaw"));
 			final ItemStack peito = new ItemStack(Material.getMaterial(2258));
 			final ItemMeta peito2 = peito.getItemMeta();
-			peito2.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voltar Ao Inicio");
+			peito2.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voltar Ao Inicio");
 			peito.setItemMeta(peito2);
 			final ItemStack peito3 = new ItemStack(Material.getMaterial(2261));
 			final ItemMeta peito4 = peito3.getItemMeta();
-			peito4.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voltar Ao Spawn");
+			peito4.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voltar Ao Spawn");
 			peito3.setItemMeta(peito4);
 			p.getInventory().setItem(3, peito3);
 			p.getInventory().setItem(5, peito);
@@ -86,16 +86,16 @@ public class Parkour implements Listener, CommandExecutor {
 			lobby.setYaw((float) Parkour.plugin.getConfig().getDouble("parkour.yaw"));
 			p.getInventory().clear();
 			p.setHealthScale(1.0);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportando Aguarde");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportando Aguarde");
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
 			final ItemStack peito = new ItemStack(Material.getMaterial(2258));
 			final ItemMeta peito2 = peito.getItemMeta();
-			peito2.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voltar Ao Inicio");
+			peito2.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voltar Ao Inicio");
 			peito.setItemMeta(peito2);
 			final ItemStack peito3 = new ItemStack(Material.getMaterial(2261));
 			final ItemMeta peito4 = peito3.getItemMeta();
-			peito4.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voltar Ao Spawn");
+			peito4.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voltar Ao Spawn");
 			peito3.setItemMeta(peito4);
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Parkour.plugin, (Runnable) new Runnable() {
 				@Override
@@ -112,13 +112,13 @@ public class Parkour implements Listener, CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportado");
-					TitleAPI.sendFullTitle(p, 50, 50, 80, "§aVoce foi para o", "§b§lPARKOUR");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportado");
+					TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½aVoce foi para o", "ï¿½bï¿½lPARKOUR");
 					KitAPI.remove(p);
 					Habilidade.setAbility(p, "Parkour");
 					final ItemStack peito = new ItemStack(Material.getMaterial(2258));
 					final ItemMeta peito2 = peito.getItemMeta();
-					peito2.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voltar Ao Inicio");
+					peito2.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voltar Ao Inicio");
 					peito.setItemMeta(peito2);
 					p.getInventory().setBoots((ItemStack) null);
 					p.getInventory().setChestplate((ItemStack) null);

@@ -8,7 +8,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Turtle implements Listener {
 	@EventHandler
@@ -57,8 +57,8 @@ public class Turtle implements Listener {
 		}
 		if (Habilidade.getAbility(p).equalsIgnoreCase("Turtle")) {
 			e.setCancelled(true);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-					+ " §6» §7N\u00e3o Se Pode Bater Quando Est\u00e1 No Shift");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+					+ " ï¿½6ï¿½ ï¿½7N\u00e3o Se Pode Bater Quando Est\u00e1 No Shift");
 		}
 	}
 }

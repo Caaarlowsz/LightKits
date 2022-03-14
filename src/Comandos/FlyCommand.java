@@ -7,13 +7,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class FlyCommand implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if (!(sender instanceof Player)) {
 			sender.sendMessage(
-					String.valueOf(String.valueOf(Main.prefix)) + " §7» Apenas Players Podem Executar Esse Comando");
+					String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ Apenas Players Podem Executar Esse Comando");
 			return true;
 		}
 		if (cmd.getName().equalsIgnoreCase("fly")) {
@@ -21,40 +21,40 @@ public class FlyCommand implements CommandExecutor, Listener {
 			if (args.length == 0) {
 				if (p.hasPermission("cmd.fly")) {
 					if (!p.getAllowFlight()) {
-						p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-								+ " §7» Voc\u00ea §a§lHABILITOU§7 o Modo Fly");
+						p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+								+ " ï¿½7ï¿½ Voc\u00ea ï¿½aï¿½lHABILITOUï¿½7 o Modo Fly");
 						p.setAllowFlight(true);
 					} else {
-						p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-								+ " §7» Voc\u00ea §c§lDESABILITOU§7 o Modo Fly");
+						p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+								+ " ï¿½7ï¿½ Voc\u00ea ï¿½cï¿½lDESABILITOUï¿½7 o Modo Fly");
 						p.setAllowFlight(false);
 					}
 				} else {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 				}
 				if (args.length == 1) {
 					if (sender.hasPermission("cmd.fly")) {
 						final Player k = Bukkit.getPlayer(args[0]);
 						if (k == null) {
-							sender.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-									+ " §7» §cEste Player Est\u00e1 Offline");
+							sender.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+									+ " ï¿½7ï¿½ ï¿½cEste Player Est\u00e1 Offline");
 							return true;
 						}
 						if (!p.getAllowFlight()) {
-							p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-									+ " §7» Voc\u00ea §a§lHABILITOU§7 o Fly Para " + k.getName());
+							p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+									+ " ï¿½7ï¿½ Voc\u00ea ï¿½aï¿½lHABILITOUï¿½7 o Fly Para " + k.getName());
 							k.setAllowFlight(true);
-							k.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-									+ " §7» Seu Fly Foi §a§lHABILITADO§7 Por " + p.getName());
+							k.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+									+ " ï¿½7ï¿½ Seu Fly Foi ï¿½aï¿½lHABILITADOï¿½7 Por " + p.getName());
 						} else {
-							p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-									+ " §7» Voc\u00ea §c§lDESABILITOU§7 o Fly Para " + k.getName());
+							p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+									+ " ï¿½7ï¿½ Voc\u00ea ï¿½cï¿½lDESABILITOUï¿½7 o Fly Para " + k.getName());
 							k.setAllowFlight(false);
-							k.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-									+ " §7» Seu Fly Foi §c§lDESABILITADO§7 Por " + p.getName());
+							k.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+									+ " ï¿½7ï¿½ Seu Fly Foi ï¿½cï¿½lDESABILITADOï¿½7 Por " + p.getName());
 						}
 					} else {
-						p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+						p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 					}
 				}
 			}

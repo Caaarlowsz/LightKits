@@ -14,7 +14,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 import Utils.Raios;
 
@@ -32,7 +32,7 @@ public class WaterBender implements Listener {
 		final Player p = e.getPlayer();
 		final Player ent = (Player) e.getRightClicked();
 		if (WaterBender.cooldown.contains(p.getName())) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o CoolDown Terminar");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o CoolDown Terminar");
 			return;
 		}
 		if (KitAPI.WaterBender.contains(p.getName()) && p.getItemInHand().getType() == Material.INK_SACK) {
@@ -40,19 +40,19 @@ public class WaterBender implements Listener {
 			Raios.kitaguala(ent.getLocation());
 			WaterBender.cooldown.add(p.getName());
 			ent.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 50, 200));
-			Bukkit.getScheduler().scheduleAsyncDelayedTask((Plugin) Main.instance, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleAsyncDelayedTask((Plugin) LightPvP.instance, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					WaterBender.wateratack.remove(ent.getName());
 				}
 			}, 40L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
 							WaterBender.cooldown.remove(p.getName());
 							p.sendMessage(
-									String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+									String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 						}
 					}, 800L);
 		}

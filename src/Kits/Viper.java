@@ -7,11 +7,11 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Viper implements Listener {
-	public Viper(final Main main) {
+	public Viper(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -29,7 +29,7 @@ public class Viper implements Listener {
 		}
 		if (Math.random() > 0.4 && Math.random() > 0.1) {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 80, 0));
-			d.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Voc\u00ea Infectou o Player §e "
+			d.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Voc\u00ea Infectou o Player ï¿½e "
 					+ p.getDisplayName());
 		}
 	}

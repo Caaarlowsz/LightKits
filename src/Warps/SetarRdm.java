@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class SetarRdm implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public SetarRdm(final Main main) {
+	public SetarRdm(final LightPvP main) {
 		SetarRdm.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetarRdm implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setrdm") && sender instanceof Player) {
 			if (!sender.hasPermission("sword.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Sem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Sem Permiss\u00e3o");
 			}
 			if (sender.hasPermission("sword.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetarRdm implements Listener, CommandExecutor {
 				SetarRdm.plugin.getConfig().set("rdm.yaw", (Object) p.getLocation().getYaw());
 				SetarRdm.plugin.getConfig().set("rdm.world", (Object) p.getLocation().getWorld().getName());
 				SetarRdm.plugin.saveConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Rdm Foi Setada Com Sucesso");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Rdm Foi Setada Com Sucesso");
 			}
 			return true;
 		}

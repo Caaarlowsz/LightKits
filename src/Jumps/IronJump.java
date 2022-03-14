@@ -15,17 +15,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class IronJump implements Listener {
-	public static Main plugin;
+	public static LightPvP plugin;
 	public static ArrayList<String> Ferro;
 
 	static {
 		IronJump.Ferro = new ArrayList<String>();
 	}
 
-	public IronJump(final Main main) {
+	public IronJump(final LightPvP main) {
 		IronJump.plugin = main;
 	}
 

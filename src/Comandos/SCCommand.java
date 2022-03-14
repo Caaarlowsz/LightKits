@@ -12,7 +12,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class SCCommand implements Listener, CommandExecutor {
 	public static ArrayList<String> staff;
@@ -25,8 +25,8 @@ public class SCCommand implements Listener, CommandExecutor {
 	public void onChat(final PlayerChatEvent e) {
 		final Player p = e.getPlayer();
 		if (this.isStaffChatting(p)) {
-			Bukkit.broadcast(ChatColor.GRAY + "[§dStaff" + ChatColor.GRAY + "]§9 " + p.getDisplayName() + "§2 \u27a1 "
-					+ "§7" + e.getMessage().replaceAll("&", "§"), "cmd.sc");
+			Bukkit.broadcast(ChatColor.GRAY + "[ï¿½dStaff" + ChatColor.GRAY + "]ï¿½9 " + p.getDisplayName() + "ï¿½2 \u27a1 "
+					+ "ï¿½7" + e.getMessage().replaceAll("&", "ï¿½"), "cmd.sc");
 			e.setCancelled(true);
 		}
 	}
@@ -41,7 +41,7 @@ public class SCCommand implements Listener, CommandExecutor {
 			if (p.hasPermission("cmd.sc")) {
 				if (this.isStaffChatting(p)) {
 					SCCommand.staff.remove(p.getName());
-					p.sendMessage(ChatColor.GRAY + " §7Voce saiu do Chat da Staff!");
+					p.sendMessage(ChatColor.GRAY + " ï¿½7Voce saiu do Chat da Staff!");
 					Player[] onlinePlayers;
 					for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
 						final Player online = onlinePlayers[i];
@@ -51,7 +51,7 @@ public class SCCommand implements Listener, CommandExecutor {
 					}
 				} else {
 					SCCommand.staff.add(p.getName());
-					p.sendMessage(ChatColor.GRAY + " §7Voce entrou no Chat da Staff");
+					p.sendMessage(ChatColor.GRAY + " ï¿½7Voce entrou no Chat da Staff");
 					Player[] onlinePlayers2;
 					for (int length2 = (onlinePlayers2 = Bukkit.getOnlinePlayers()).length, j = 0; j < length2; ++j) {
 						final Player online = onlinePlayers2[j];
@@ -61,8 +61,8 @@ public class SCCommand implements Listener, CommandExecutor {
 					}
 				}
 			} else {
-				p.sendMessage(String.valueOf(Main.prefix)
-						+ "§cDesculpe, Mas voce precisa do Grupo §3Ajudante §cou Superior para executar este comando.");
+				p.sendMessage(String.valueOf(LightPvP.prefix)
+						+ "ï¿½cDesculpe, Mas voce precisa do Grupo ï¿½3Ajudante ï¿½cou Superior para executar este comando.");
 			}
 		}
 		return true;

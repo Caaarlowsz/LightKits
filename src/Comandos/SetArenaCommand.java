@@ -11,12 +11,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class SetArenaCommand implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public SetArenaCommand(final Main main) {
+	public SetArenaCommand(final LightPvP main) {
 		SetArenaCommand.plugin = main;
 	}
 
@@ -24,12 +24,12 @@ public class SetArenaCommand implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (p.hasPermission("cmd.set") && label.equalsIgnoreCase("setarena")) {
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Especifique a Arena (1/7)");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Especifique a Arena (1/7)");
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("1")) {
-				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Arena 1 Setada");
+				LightPvP.getPlugin().getConfig();
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Arena 1 Setada");
 				SetArenaCommand.plugin.getConfig().set("arena1.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena1.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena1.z", (Object) p.getLocation().getZ());
@@ -37,11 +37,11 @@ public class SetArenaCommand implements Listener, CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena1.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena1.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena1.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				LightPvP.plugin.saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("2")) {
-				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Arena 2 Setada");
+				LightPvP.getPlugin().getConfig();
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Arena 2 Setada");
 				SetArenaCommand.plugin.getConfig().set("arena2.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena2.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena2.z", (Object) p.getLocation().getZ());
@@ -49,11 +49,11 @@ public class SetArenaCommand implements Listener, CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena2.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena2.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena2.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				LightPvP.plugin.saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("3")) {
-				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Arena 3 Setada");
+				LightPvP.getPlugin().getConfig();
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Arena 3 Setada");
 				SetArenaCommand.plugin.getConfig().set("arena3.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena3.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena3.z", (Object) p.getLocation().getZ());
@@ -61,11 +61,11 @@ public class SetArenaCommand implements Listener, CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena3.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena3.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena3.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				LightPvP.plugin.saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("4")) {
-				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Arena 4 Setada");
+				LightPvP.getPlugin().getConfig();
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Arena 4 Setada");
 				SetArenaCommand.plugin.getConfig().set("arena4.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena4.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena4.z", (Object) p.getLocation().getZ());
@@ -73,11 +73,11 @@ public class SetArenaCommand implements Listener, CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena4.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena4.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena4.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				LightPvP.plugin.saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("5")) {
-				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Arena 5 Setada");
+				LightPvP.getPlugin().getConfig();
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Arena 5 Setada");
 				SetArenaCommand.plugin.getConfig().set("arena5.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena5.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena5.z", (Object) p.getLocation().getZ());
@@ -85,11 +85,11 @@ public class SetArenaCommand implements Listener, CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena5.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena5.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena5.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				LightPvP.plugin.saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("6")) {
-				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Arena 6 Setada");
+				LightPvP.getPlugin().getConfig();
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Arena 6 Setada");
 				SetArenaCommand.plugin.getConfig().set("arena6.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena6.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena6.z", (Object) p.getLocation().getZ());
@@ -97,11 +97,11 @@ public class SetArenaCommand implements Listener, CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena6.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena6.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena6.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				LightPvP.plugin.saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("7")) {
-				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Arena 7 Setada");
+				LightPvP.getPlugin().getConfig();
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Arena 7 Setada");
 				SetArenaCommand.plugin.getConfig().set("arena7.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena7.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena7.z", (Object) p.getLocation().getZ());
@@ -109,7 +109,7 @@ public class SetArenaCommand implements Listener, CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena7.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena7.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena7.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				LightPvP.plugin.saveConfig();
 			}
 		}
 		return false;

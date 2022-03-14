@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class DarXp implements CommandExecutor, Listener {
 	public static boolean isNumeric(String str) {
@@ -23,25 +23,25 @@ public class DarXp implements CommandExecutor, Listener {
 		Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("darmoedas")) {
 			if (!p.hasPermission("cmd.darmoedas")) {
-				p.sendMessage(Main.prefix + " §7Sem Permissao");
+				p.sendMessage(LightPvP.prefix + " ï¿½7Sem Permissao");
 			} else {
 				if (args.length == 0) {
-					sender.sendMessage(Main.prefix + " §7Use: /darmoedas (Jogador) (N° De coins)");
+					sender.sendMessage(LightPvP.prefix + " ï¿½7Use: /darmoedas (Jogador) (Nï¿½ De coins)");
 					return true;
 				}
 				Player target = Bukkit.getPlayerExact(args[0]);
 				if ((target == null) || (!(target instanceof Player))) {
-					sender.sendMessage(Main.prefix + " §4Este player está off");
+					sender.sendMessage(LightPvP.prefix + " ï¿½4Este player estï¿½ off");
 					return true;
 				}
 				if (isNumeric(args[1])) {
 					int coins = Integer.parseInt(args[1]);
 					XpM.addMoney(target, coins);
 					p.sendMessage(
-							Main.prefix + " §aVoce deu ao jogador §a" + target.getName() + " §2" + coins + " §7Moedas");
+							LightPvP.prefix + " ï¿½aVoce deu ao jogador ï¿½a" + target.getName() + " ï¿½2" + coins + " ï¿½7Moedas");
 
 					target.sendMessage(
-							Main.prefix + " §aVoce recebeu do jogador §a" + p.getName() + " §2" + coins + " §7Moedas");
+							LightPvP.prefix + " ï¿½aVoce recebeu do jogador ï¿½a" + p.getName() + " ï¿½2" + coins + " ï¿½7Moedas");
 				}
 			}
 		}

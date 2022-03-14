@@ -8,7 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Bussola implements Listener {
 	@EventHandler
@@ -23,13 +23,13 @@ public class Bussola implements Listener {
 					}
 					parar = true;
 					e.getPlayer().setCompassTarget(entidades.getLocation());
-					e.getPlayer().sendMessage(String.valueOf(Main.prefix) + " §7Bussola apontando para §2"
+					e.getPlayer().sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½7Bussola apontando para ï¿½2"
 							+ ((Player) entidades).getName());
 					return;
 				}
 			}
 			if (!parar) {
-				e.getPlayer().sendMessage(String.valueOf(Main.prefix) + " §7Nenhum jogador encontrado!");
+				e.getPlayer().sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½7Nenhum jogador encontrado!");
 				e.getPlayer().setCompassTarget(new Location(e.getPlayer().getWorld(), 0.0, 100.0, 0.0));
 			}
 		}

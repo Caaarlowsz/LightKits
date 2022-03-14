@@ -19,13 +19,13 @@ import org.bukkit.potion.PotionEffectType;
 import com.connorlinfoot.titleapi.TitleAPI;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class WarpRdm implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public WarpRdm(final Main main) {
+	public WarpRdm(final LightPvP main) {
 		WarpRdm.plugin = main;
 	}
 
@@ -42,7 +42,7 @@ public class WarpRdm implements Listener, CommandExecutor {
 			lobby.setYaw((float) WarpRdm.plugin.getConfig().getDouble("rdm.yaw"));
 			p.getInventory().clear();
 			p.setHealthScale(1.0);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportando Aguarde");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportando Aguarde");
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) WarpRdm.plugin, (Runnable) new Runnable() {
@@ -60,13 +60,13 @@ public class WarpRdm implements Listener, CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportado");
-					TitleAPI.sendFullTitle(p, 50, 50, 80, "§aVoce foi para a", "§b§lRDM");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportado");
+					TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½aVoce foi para a", "ï¿½bï¿½lRDM");
 					KitAPI.remove(p);
 					Habilidade.setAbility(p, "Rdm");
 					final ItemStack peito = new ItemStack(Material.IRON_CHESTPLATE);
 					final ItemMeta peito2 = peito.getItemMeta();
-					peito2.setDisplayName("§7Peitoral");
+					peito2.setDisplayName("ï¿½7Peitoral");
 					peito.setItemMeta(peito2);
 					p.getInventory().setBoots((ItemStack) null);
 					p.getInventory().setChestplate(peito);

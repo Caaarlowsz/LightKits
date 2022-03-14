@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class TheForceField implements Listener {
@@ -26,7 +26,7 @@ public class TheForceField implements Listener {
 		TheForceField.cooldownm = new ArrayList<Player>();
 	}
 
-	public TheForceField(final Main main) {
+	public TheForceField(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -39,31 +39,31 @@ public class TheForceField implements Listener {
 				event.setCancelled(true);
 			}
 			if (TheForceField.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o CoolDown Terminar");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o CoolDown Terminar");
 				return;
 			}
 			final Location loc = p.getLocation();
 			p.getWorld().playSound(loc, Sound.MAGMACUBE_WALK2, 0.5f, 0.5f);
 			TheForceField.cooldownm.add(p);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.ForceField1.add(p.getName());
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-							+ " §6» §7Voc\u00ea Ativou O ForceField Seu Hask");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+							+ " ï¿½6ï¿½ ï¿½7Voc\u00ea Ativou O ForceField Seu Hask");
 				}
 			}, 0L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.ForceField1.remove(p.getName());
 				}
 			}, 50L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					TheForceField.cooldownm.remove(p);
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 0.5f, 0.5f);
 				}
 			}, 500L);
@@ -80,7 +80,7 @@ public class TheForceField implements Listener {
 						((Player) pertos).damage(3.0);
 					}
 					pertos.setVelocity(new Vector(0.1, 0.0, 0.1));
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 						@Override
 						public void run() {
 						}

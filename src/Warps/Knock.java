@@ -18,7 +18,7 @@ import org.bukkit.potion.PotionEffect;
 import com.connorlinfoot.titleapi.TitleAPI;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Knock implements Listener, CommandExecutor {
@@ -28,9 +28,9 @@ public class Knock implements Listener, CommandExecutor {
 	public static ItemMeta warpsmeta;
 	public static ItemStack loja;
 	public static ItemMeta lojameta;
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public Knock(final Main main) {
+	public Knock(final LightPvP main) {
 		Knock.plugin = main;
 	}
 
@@ -43,7 +43,7 @@ public class Knock implements Listener, CommandExecutor {
 			p.getInventory().setChestplate((ItemStack) null);
 			p.getInventory().setLeggings((ItemStack) null);
 			p.getInventory().setHelmet((ItemStack) null);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportando Aguarde");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportando Aguarde");
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Knock.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -67,8 +67,8 @@ public class Knock implements Listener, CommandExecutor {
 					p.setFireTicks(0);
 					p.setFoodLevel(20000);
 					p.setHealth(20.0);
-					KitAPI.setitem(p, Material.STICK, "§cBata", 0, Enchantment.KNOCKBACK, 5, true);
-					TitleAPI.sendFullTitle(p, 50, 50, 80, "§aVoce foi para a", "§b§lKnock");
+					KitAPI.setitem(p, Material.STICK, "ï¿½cBata", 0, Enchantment.KNOCKBACK, 5, true);
+					TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½aVoce foi para a", "ï¿½bï¿½lKnock");
 					for (final PotionEffect effect : p.getActivePotionEffects()) {
 						p.removePotionEffect(effect.getType());
 					}

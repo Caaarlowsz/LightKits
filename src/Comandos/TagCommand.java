@@ -10,10 +10,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class TagCommand implements Listener, CommandExecutor {
-	public TagCommand(final Main main) {
+	public TagCommand(final LightPvP main) {
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -24,401 +24,401 @@ public class TagCommand implements Listener, CommandExecutor {
 		if (args.length != 0) {
 			if (args[0].equalsIgnoreCase("normal")) {
 				if (p.hasPermission("tag.normal")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§7" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½7" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &7&lJOGADOR &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("light")) {
 				if (p.hasPermission("tag.light")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§a§lLIGHT §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§a" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½aï¿½lLIGHT ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½a" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &a&lLIGHT &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("coder")) {
 				if (p.hasPermission("tag.coder")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§3§lCODER §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§3" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½3ï¿½lCODER ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½3" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &3&lCoder &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("subdono")) {
 				if (p.hasPermission("tag.subdono")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§c§lSUB§4§lDONO §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§4" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½cï¿½lSUBï¿½4ï¿½lDONO ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½4" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &c&lSUB&4&lDONO &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("builder+")) {
 				if (p.hasPermission("tag.builder+")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§1§lBUILDER+ §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§1" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½1ï¿½lBUILDER+ ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½1" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &1&lBUILDER+ &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("master")) {
 				if (p.hasPermission("tag.master")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§6§lMASTER §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§6" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½6ï¿½lMASTER ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½6" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &6&lMASTER &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("premium")) {
 				if (p.hasPermission("tag.premium")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§e§lPREMIUM §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§e" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½eï¿½lPREMIUM ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½e" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &e&lPREMIUM &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("ultimate")) {
 				if (p.hasPermission("tag.ultimate")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§d§lULTIMATE §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§d" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½dï¿½lULTIMATE ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½d" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
-							"ne prefix " + p.getName() + " &d§lULTIMATE &7");
+							"ne prefix " + p.getName() + " &dï¿½lULTIMATE &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("beta")) {
 				if (p.hasPermission("tag.beta")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§1§lBETA §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§1" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½1ï¿½lBETA ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½1" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
-							"ne prefix " + p.getName() + " &1§lBETA &7");
+							"ne prefix " + p.getName() + " &1ï¿½lBETA &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("youtuber")) {
 				if (p.hasPermission("tag.youtuber")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§c§lY§f§lT §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§b" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½cï¿½lYï¿½fï¿½lT ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½b" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
-							"ne prefix " + p.getName() + " &c§lY§f§lT &7");
+							"ne prefix " + p.getName() + " &cï¿½lYï¿½fï¿½lT &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("youtuber+")) {
 				if (p.hasPermission("tag.youtuber+")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§c§lY§f§lT§3+ §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§b" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½cï¿½lYï¿½fï¿½lTï¿½3+ ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½b" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
-							"ne prefix " + p.getName() + " §c§lY§f§lT§3+ &7");
+							"ne prefix " + p.getName() + " ï¿½cï¿½lYï¿½fï¿½lTï¿½3+ &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("ajudante")) {
 				if (p.hasPermission("tag.ajudante")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§3§lAJUDANTE §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§3" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½3ï¿½lAJUDANTE ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½3" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &3&lAJUDANTE &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("builder")) {
 				if (p.hasPermission("tag.builder")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§1§lBUILDER §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§1" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½1ï¿½lBUILDER ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½1" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &1&lBUILDER &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("trial")) {
 				if (p.hasPermission("tag.trial")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§d§lTRIAL §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§d" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½dï¿½lTRIAL ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½d" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &d&lTRIAL &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("mod")) {
 				if (p.hasPermission("tag.mod")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§5§lMOD §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§5" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½5ï¿½lMOD ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½5" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &5&lMOD &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("mod+")) {
 				if (p.hasPermission("tag.mod+")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§5§lMOD+ §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§5" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½5ï¿½lMOD+ ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½5" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &5&lMOD+ &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("admin")) {
 				if (p.hasPermission("tag.admin")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§c§lADM §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§c" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½cï¿½lADM ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½c" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &c&lADMIN &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("dono")) {
 				if (p.hasPermission("tag.dono")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§4§lDONO §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§4" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½4ï¿½lDONO ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½4" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &4&lDONO &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("gerente")) {
 				if (p.hasPermission("tag.gerente")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§2§lGERENTE §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§2" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½2ï¿½lGERENTE ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½2" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &2&lGERENTE &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			if (args[0].equalsIgnoreCase("semiyt")) {
 				if (p.hasPermission("tag.semiyt")) {
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §aTag Alterada");
-					p.setDisplayName("§7§lSEMI-YT §7" + p.getName() + ChatColor.WHITE);
-					p.setPlayerListName("§7" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½aTag Alterada");
+					p.setDisplayName("ï¿½7ï¿½lSEMI-YT ï¿½7" + p.getName() + ChatColor.WHITE);
+					p.setPlayerListName("ï¿½7" + getShortStr(p.getName()) + ChatColor.WHITE + ChatColor.ITALIC);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"ne prefix " + p.getName() + " &f&lSEMI-YT &7");
 					return true;
 				}
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §cSem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½cSem Permiss\u00e3o");
 			}
 			return false;
 		}
 		if (p.hasPermission("*")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §d§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §7§lYOUTUBER+");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
-			p.sendMessage("§7» §e§lBUILDER");
-			p.sendMessage("§7» §d§lTRIAL");
-			p.sendMessage("§7» §5§lMOD");
-			p.sendMessage("§7» §c§lADM");
-			p.sendMessage("§7» §2§lGERENTE");
-			p.sendMessage("§7» §4§lDONO");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½dï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lYOUTUBER+");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½eï¿½lBUILDER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½dï¿½lTRIAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½5ï¿½lMOD");
+			p.sendMessage("ï¿½7ï¿½ ï¿½cï¿½lADM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½2ï¿½lGERENTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½4ï¿½lDONO");
 			return true;
 		}
 		if (p.hasPermission("tag.normal")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
 		}
 		if (p.hasPermission("tag.LIGHT")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
 		}
 		if (p.hasPermission("tag.PREMIUM")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
 		}
 		if (p.hasPermission("tag.ULTIMATE")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
 		}
 		if (p.hasPermission("tag.semiyt")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
 		}
 		if (p.hasPermission("tag.youtuber")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
 		}
 		if (p.hasPermission("tag.youtuber+")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §b§lYOUTUBER§3+");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBERï¿½3+");
 		}
 		if (p.hasPermission("tag.ajudante")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
 		}
 		if (p.hasPermission("tag.builder")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
-			p.sendMessage("§7» §e§lBUILDER");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½eï¿½lBUILDER");
 		}
 		if (p.hasPermission("tag.trial")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
-			p.sendMessage("§7» §e§lBUILDER");
-			p.sendMessage("§7» §d§lTRIAL");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½eï¿½lBUILDER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½dï¿½lTRIAL");
 		}
 		if (p.hasPermission("tag.mod")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
-			p.sendMessage("§7» §e§lBUILDER");
-			p.sendMessage("§7» §d§lTRIAL");
-			p.sendMessage("§7» §5§lMOD");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½eï¿½lBUILDER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½dï¿½lTRIAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½5ï¿½lMOD");
 		}
 		if (p.hasPermission("tag.admin")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
-			p.sendMessage("§7» §e§lBUILDER");
-			p.sendMessage("§7» §d§lTRIAL");
-			p.sendMessage("§7» §5§lMOD");
-			p.sendMessage("§7» §c§lADM");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½eï¿½lBUILDER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½dï¿½lTRIAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½5ï¿½lMOD");
+			p.sendMessage("ï¿½7ï¿½ ï¿½cï¿½lADM");
 		}
 		if (p.hasPermission("tag.gerente")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
-			p.sendMessage("§7» §e§lBUILDER");
-			p.sendMessage("§7» §d§lTRIAL");
-			p.sendMessage("§7» §5§lMOD");
-			p.sendMessage("§7» §c§lADM");
-			p.sendMessage("§7» §2§lGERENTE");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½eï¿½lBUILDER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½dï¿½lTRIAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½5ï¿½lMOD");
+			p.sendMessage("ï¿½7ï¿½ ï¿½cï¿½lADM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½2ï¿½lGERENTE");
 		}
 		if (p.hasPermission("tag.subdono")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
-			p.sendMessage("§7» §1§lBUILDER");
-			p.sendMessage("§7» §d§lTRIAL");
-			p.sendMessage("§7» §5§lMOD");
-			p.sendMessage("§7» §c§lADM");
-			p.sendMessage("§7» §2§lGERENTE");
-			p.sendMessage("§7» §c§lSUB§4§lDONO");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½1ï¿½lBUILDER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½dï¿½lTRIAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½5ï¿½lMOD");
+			p.sendMessage("ï¿½7ï¿½ ï¿½cï¿½lADM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½2ï¿½lGERENTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½cï¿½lSUBï¿½4ï¿½lDONO");
 		}
 		if (p.hasPermission("tag.builder+")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §1§lBUILDER");
-			p.sendMessage("§7» §1§lBUILDER+");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½1ï¿½lBUILDER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½1ï¿½lBUILDER+");
 		}
 		if (p.hasPermission("tag.dono")) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §7» §eTags Disponiveis No Momento");
-			p.sendMessage("§7» §7§lNORMAL");
-			p.sendMessage("§7» §a§lLIGHT");
-			p.sendMessage("§7» §6§lPREMIUM");
-			p.sendMessage("§7» §9§lULTIMATE");
-			p.sendMessage("§7» §7§lSEMI-YT");
-			p.sendMessage("§7» §b§lYOUTUBER");
-			p.sendMessage("§7» §3§lAJUDANTE");
-			p.sendMessage("§7» §1§lBUILDER");
-			p.sendMessage("§7» §d§lTRIAL");
-			p.sendMessage("§7» §5§lMOD");
-			p.sendMessage("§7» §c§lADM");
-			p.sendMessage("§7» §2§lGERENTE");
-			p.sendMessage("§7» §4§lDONO");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½7ï¿½ ï¿½eTags Disponiveis No Momento");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lNORMAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½aï¿½lLIGHT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½6ï¿½lPREMIUM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½9ï¿½lULTIMATE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½7ï¿½lSEMI-YT");
+			p.sendMessage("ï¿½7ï¿½ ï¿½bï¿½lYOUTUBER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½3ï¿½lAJUDANTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½1ï¿½lBUILDER");
+			p.sendMessage("ï¿½7ï¿½ ï¿½dï¿½lTRIAL");
+			p.sendMessage("ï¿½7ï¿½ ï¿½5ï¿½lMOD");
+			p.sendMessage("ï¿½7ï¿½ ï¿½cï¿½lADM");
+			p.sendMessage("ï¿½7ï¿½ ï¿½2ï¿½lGERENTE");
+			p.sendMessage("ï¿½7ï¿½ ï¿½4ï¿½lDONO");
 		}
 		return false;
 	}
@@ -454,8 +454,8 @@ public class TagCommand implements Listener, CommandExecutor {
 	@EventHandler
 	public void aoEntrar(final PlayerJoinEvent e) {
 		final Player p = e.getPlayer();
-		p.setDisplayName("§7" + p.getName() + ChatColor.GRAY);
-		p.setPlayerListName("§7" + getShortStr(p.getName()) + ChatColor.GRAY + ChatColor.ITALIC);
+		p.setDisplayName("ï¿½7" + p.getName() + ChatColor.GRAY);
+		p.setPlayerListName("ï¿½7" + getShortStr(p.getName()) + ChatColor.GRAY + ChatColor.ITALIC);
 		Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(), "ne prefix " + p.getName() + "&7");
 	}
 }

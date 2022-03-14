@@ -17,10 +17,10 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class KitsInventory implements Listener, CommandExecutor {
-	public KitsInventory(final Main main) {
+	public KitsInventory(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -28,17 +28,17 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (e.getCurrentItem() != null && e.getCurrentItem().getItemMeta() != null) {
 			final Inventory inv = e.getInventory();
 			final Player p = (Player) e.getWhoClicked();
-			if (inv.getTitle().equals("§8Seus Kits [1]")) {
+			if (inv.getTitle().equals("ï¿½8Seus Kits [1]")) {
 				p.playSound(p.getLocation(), Sound.LEVEL_UP, 5.0f, 5.0f);
 			}
 		}
 	}
 
 	public static void guiKits1(final Player p) {
-		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "§8Seus Kits [1]");
+		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "ï¿½8Seus Kits [1]");
 		final ItemStack vidro1 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 7);
 		final ItemMeta meta1v = vidro1.getItemMeta();
-		meta1v.setDisplayName("§7+");
+		meta1v.setDisplayName("ï¿½7+");
 		vidro1.setItemMeta(meta1v);
 		inv.setItem(1, vidro1);
 		inv.setItem(7, vidro1);
@@ -52,7 +52,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		inv.setItem(53, vidro1);
 		final ItemStack vidro2 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 4);
 		final ItemMeta meta2v = vidro2.getItemMeta();
-		meta2v.setDisplayName("§7+");
+		meta2v.setDisplayName("ï¿½7+");
 		vidro2.setItemMeta(meta2v);
 		inv.setItem(2, vidro2);
 		inv.setItem(3, vidro2);
@@ -74,18 +74,18 @@ public class KitsInventory implements Listener, CommandExecutor {
 		inv.setItem(51, vidro2);
 		final ItemStack loja2 = new ItemStack(Material.REDSTONE);
 		final ItemMeta loja2v = loja2.getItemMeta();
-		loja2v.setDisplayName("§aProxima Pagina");
+		loja2v.setDisplayName("ï¿½aProxima Pagina");
 		loja2.setItemMeta(loja2v);
 		inv.setItem(8, loja2);
 		final ItemStack loja3 = new ItemStack(Material.getMaterial(351), 1, (short) 14);
 		final ItemMeta loja23v = loja3.getItemMeta();
-		loja23v.setDisplayName("§cVoltar");
+		loja23v.setDisplayName("ï¿½cVoltar");
 		loja3.setItemMeta(loja23v);
 		inv.setItem(0, loja3);
 		if (p.hasPermission("kit.pvp")) {
 			final ItemStack pyro = new ItemStack(Material.STONE_SWORD);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7PvP");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7PvP");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -94,7 +94,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.ajnin")) {
 			final ItemStack pyro = new ItemStack(Material.NETHER_STAR);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Ajnin");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Ajnin");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -103,7 +103,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.anchor")) {
 			final ItemStack pyro = new ItemStack(Material.ANVIL);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Anchor");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Anchor");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -112,7 +112,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.avatar")) {
 			final ItemStack pyro = new ItemStack(Material.BEACON);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Avatar");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Avatar");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -121,7 +121,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.barbarian")) {
 			final ItemStack pyro = new ItemStack(Material.WOOD_SWORD);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Barbarian");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Barbarian");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -130,7 +130,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.boxer")) {
 			final ItemStack pyro = new ItemStack(Material.QUARTZ);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Boxer");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Boxer");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -139,7 +139,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.c4")) {
 			final ItemStack pyro = new ItemStack(Material.SLIME_BALL);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7C4");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7C4");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -148,7 +148,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.deshfire")) {
 			final ItemStack pyro = new ItemStack(Material.REDSTONE_BLOCK);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7DeshFire");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7DeshFire");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -157,7 +157,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.DubleJump")) {
 			final ItemStack pyro = new ItemStack(Material.PISTON_BASE);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7DubleJump");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7DubleJump");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -166,7 +166,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.firebender")) {
 			final ItemStack pyro = new ItemStack(Material.REDSTONE);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7FireBender");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7FireBender");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -175,7 +175,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.fisherman")) {
 			final ItemStack pyro = new ItemStack(Material.FISHING_ROD);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Fisherman");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Fisherman");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -184,7 +184,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.gladiator")) {
 			final ItemStack pyro = new ItemStack(Material.IRON_FENCE);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Gladiator");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Gladiator");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -193,7 +193,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.hulk")) {
 			final ItemStack pyro = new ItemStack(Material.SADDLE);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Hulk");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Hulk");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -202,7 +202,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.jellyfish")) {
 			final ItemStack pyro = new ItemStack(Material.CLAY_BALL);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7JellyFish");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7JellyFish");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -211,7 +211,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.kangaroo")) {
 			final ItemStack pyro = new ItemStack(Material.FIREWORK);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kangaroo");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kangaroo");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -220,7 +220,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.magma")) {
 			final ItemStack pyro = new ItemStack(Material.FIREBALL);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Magma");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Magma");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -229,7 +229,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.monk")) {
 			final ItemStack pyro = new ItemStack(Material.BLAZE_ROD);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Monk");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Monk");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -238,7 +238,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.ninja")) {
 			final ItemStack pyro = new ItemStack(Material.COMPASS);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Ninja");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Ninja");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -247,7 +247,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.phantom")) {
 			final ItemStack pyro = new ItemStack(Material.FEATHER);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Phantom");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Phantom");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -256,7 +256,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.poseidon")) {
 			final ItemStack pyro = new ItemStack(Material.WATER);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Poseidon");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Poseidon");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -265,7 +265,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.Resouper")) {
 			final ItemStack pyro = new ItemStack(Material.MUSHROOM_SOUP);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Resouper");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Resouper");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -274,7 +274,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.snail")) {
 			final ItemStack pyro = new ItemStack(Material.WEB);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Snail");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Snail");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -283,7 +283,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.stomper")) {
 			final ItemStack pyro = new ItemStack(Material.IRON_BOOTS);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Stomper");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Stomper");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -292,7 +292,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.sonic")) {
 			final ItemStack pyro = new ItemStack(Material.LAPIS_BLOCK);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Sonic");
+			metapyro.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Sonic");
 			final ArrayList<String> descpyro1 = new ArrayList<>();
 			metapyro.setLore(descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -313,7 +313,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 	@EventHandler
 	public void onPlayerCLickInventry(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equalsIgnoreCase("§8Seus Kits [1]") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("ï¿½8Seus Kits [1]") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
 			if (e.getCurrentItem().getType() == Material.STONE_SWORD) {
@@ -340,7 +340,7 @@ public class KitsInventory implements Listener, CommandExecutor {
 				p.chat("/kit avatar");
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aProxima Pagina")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aProxima Pagina")) {
 				e.setCancelled(true);
 				KitsInventory2.guiKits1(p);
 				return;

@@ -21,7 +21,7 @@ import org.bukkit.util.Vector;
 import Eventos.Basico;
 import Eventos.Cooldown;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class C4 implements Listener {
 	public static HashMap<String, Item> bomba;
@@ -48,15 +48,15 @@ public class C4 implements Listener {
 					C4.bomba.put(p.getName(), item);
 					final ItemStack itemb = new ItemStack(Material.STONE_BUTTON);
 					final ItemMeta itembm = itemb.getItemMeta();
-					itembm.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6C4");
+					itembm.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6C4");
 					itemb.setItemMeta(itembm);
 					p.getInventory().setItemInHand(itemb);
 					p.updateInventory();
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Bomba Armada");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Bomba Armada");
 				} else if (p.getItemInHand().getType() == Material.STONE_BUTTON) {
 					final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);
 					final ItemMeta itembm2 = itemb2.getItemMeta();
-					itembm2.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6C4");
+					itembm2.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6C4");
 					itemb2.setItemMeta(itembm2);
 					p.getInventory().setItemInHand(itemb2);
 					final Item item2 = C4.bomba.get(p.getName());
@@ -65,14 +65,14 @@ public class C4 implements Listener {
 					C4.bomba.remove(p.getName());
 					item2.remove();
 					p.updateInventory();
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Bomba Explodida");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Bomba Explodida");
 					Cooldown.add(p, 20);
-					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(),
+					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
-									p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-											+ " §6» §7Seu CoolDown Foi Terminado");
+									p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+											+ " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 								}
 							}, 400L);
 				}
@@ -84,14 +84,14 @@ public class C4 implements Listener {
 				}
 				final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);
 				final ItemMeta itembm2 = itemb2.getItemMeta();
-				itembm2.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6C4");
+				itembm2.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6C4");
 				itemb2.setItemMeta(itembm2);
 				p.getInventory().setItemInHand(itemb2);
 				final Item item2 = C4.bomba.get(p.getName());
 				C4.bomba.remove(p.getName());
 				item2.remove();
 				p.updateInventory();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Bomba Desarmada");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Bomba Desarmada");
 			}
 		}
 	}

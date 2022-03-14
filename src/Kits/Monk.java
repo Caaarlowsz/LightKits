@@ -14,7 +14,7 @@ import org.bukkit.plugin.Plugin;
 import Eventos.Basico;
 import Eventos.Cooldown;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Monk implements Listener {
 	@EventHandler
@@ -33,15 +33,15 @@ public class Monk implements Listener {
 				final ItemStack ItemMudado = jogadorClicado.getItemInHand();
 				jogadorClicado.setItemInHand(ItemSelecionado);
 				jogadorClicado.getInventory().setItem(random, ItemMudado);
-				jogadorClicado.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea Foi Monkado Arrume Seu Inventario");
-				p.sendMessage(String.valueOf(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea Monkou o Player " + jogadorClicado.getName()));
+				jogadorClicado.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea Foi Monkado Arrume Seu Inventario");
+				p.sendMessage(String.valueOf(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea Monkou o Player " + jogadorClicado.getName()));
 				Cooldown.add(p, 20);
-				Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.getInstace(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
-						p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7CoolDown §aAcabou");
+						p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7CoolDown ï¿½aAcabou");
 					}
 				}, 400L);
 			}

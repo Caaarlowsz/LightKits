@@ -12,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Ninja implements Listener {
@@ -26,7 +26,7 @@ public class Ninja implements Listener {
 		Ninja.cooldownbk = new ArrayList<Player>();
 	}
 
-	public Ninja(final Main main) {
+	public Ninja(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -37,7 +37,7 @@ public class Ninja implements Listener {
 			final Player localPlayer2 = (Player) paramEntityDamageByEntityEvent.getEntity();
 			if (KitAPI.Ninja.contains(localPlayer1.getName())) {
 				Ninja.a.put(localPlayer1, localPlayer2);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(LightPvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Ninja.cooldownbk.remove(localPlayer1);
@@ -64,15 +64,15 @@ public class Ninja implements Listener {
 			if (Ninja.b.get(localPlayer1) == null || Ninja.b.get(localPlayer1) < System.currentTimeMillis()) {
 				if (localPlayer1.getLocation().distance(localPlayer2.getLocation()) < 100.0) {
 					localPlayer1.teleport(localPlayer2.getLocation());
-					localPlayer1.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportado");
+					localPlayer1.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportado");
 					Ninja.b.put(localPlayer1, System.currentTimeMillis() + 10000L);
 				} else {
-					localPlayer1.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-							+ " §6» §7O Utimo Player Que Voc\u00ea Hitou Est\u00e1 Longe Demais!");
+					localPlayer1.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+							+ " ï¿½6ï¿½ ï¿½7O Utimo Player Que Voc\u00ea Hitou Est\u00e1 Longe Demais!");
 				}
 			} else {
 				localPlayer1.sendMessage(
-						String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde " + str + " Segundos");
+						String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde " + str + " Segundos");
 			}
 		}
 	}

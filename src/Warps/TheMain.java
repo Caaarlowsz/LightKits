@@ -19,13 +19,13 @@ import org.bukkit.potion.PotionEffectType;
 import com.connorlinfoot.titleapi.TitleAPI;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class TheMain implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public TheMain(final Main main) {
+	public TheMain(final LightPvP main) {
 		TheMain.plugin = main;
 	}
 
@@ -42,7 +42,7 @@ public class TheMain implements Listener, CommandExecutor {
 			lobby.setYaw((float) TheMain.plugin.getConfig().getDouble("themain.yaw"));
 			p.getInventory().clear();
 			p.setHealthScale(1.0);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportando Aguarde");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportando Aguarde");
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) TheMain.plugin, (Runnable) new Runnable() {
@@ -60,13 +60,13 @@ public class TheMain implements Listener, CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportado");
-					TitleAPI.sendFullTitle(p, 50, 50, 80, "§aVoce foi para a", "§b§lMAIN");
+					p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportado");
+					TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½aVoce foi para a", "ï¿½bï¿½lMAIN");
 					KitAPI.remove(p);
 					Habilidade.setAbility(p, "Main");
 					final ItemStack peito = new ItemStack(Material.DIAMOND_CHESTPLATE);
 					final ItemMeta peito2 = peito.getItemMeta();
-					peito2.setDisplayName("§7Peitoral");
+					peito2.setDisplayName("ï¿½7Peitoral");
 					peito.setItemMeta(peito2);
 					p.getInventory().setBoots((ItemStack) null);
 					p.getInventory().setChestplate(peito);

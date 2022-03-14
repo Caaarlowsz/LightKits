@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class SetFps implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public SetFps(final Main main) {
+	public SetFps(final LightPvP main) {
 		SetFps.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetFps implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setfps") && sender instanceof Player) {
 			if (!sender.hasPermission("sword.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Sem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Sem Permiss\u00e3o");
 			}
 			if (sender.hasPermission("sword.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetFps implements Listener, CommandExecutor {
 				SetFps.plugin.getConfig().set("fps.yaw", (Object) p.getLocation().getYaw());
 				SetFps.plugin.getConfig().set("fps.world", (Object) p.getLocation().getWorld().getName());
 				SetFps.plugin.saveConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Fps Foi Setada Com Sucesso");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Fps Foi Setada Com Sucesso");
 			}
 			return true;
 		}

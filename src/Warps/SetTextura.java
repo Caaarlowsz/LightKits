@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class SetTextura implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public SetTextura(final Main main) {
+	public SetTextura(final LightPvP main) {
 		SetTextura.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetTextura implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("settextura") && sender instanceof Player) {
 			if (!sender.hasPermission("cmd.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Sem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Sem Permiss\u00e3o");
 			}
 			if (sender.hasPermission("cmd.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetTextura implements Listener, CommandExecutor {
 				SetTextura.plugin.getConfig().set("textura.yaw", (Object) p.getLocation().getYaw());
 				SetTextura.plugin.getConfig().set("textura.world", (Object) p.getLocation().getWorld().getName());
 				SetTextura.plugin.saveConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Textura Foi Setada Com Sucesso");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Textura Foi Setada Com Sucesso");
 			}
 			return true;
 		}

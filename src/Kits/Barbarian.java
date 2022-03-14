@@ -17,7 +17,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import Eventos.Array;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class Barbarian implements Listener, CommandExecutor {
 	@EventHandler
@@ -72,11 +72,11 @@ public class Barbarian implements Listener, CommandExecutor {
 		final ItemStack dima = new ItemStack(Material.WOOD_SWORD);
 		dima.addEnchantment(Enchantment.DAMAGE_ALL, 1);
 		final ItemMeta souperaa = dima.getItemMeta();
-		souperaa.setDisplayName("§cEspada");
+		souperaa.setDisplayName("ï¿½cEspada");
 		dima.setItemMeta(souperaa);
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta sopas = sopa.getItemMeta();
-		sopas.setDisplayName("§6Sopa");
+		sopas.setDisplayName("ï¿½6Sopa");
 		sopa.setItemMeta(sopas);
 		final ItemStack capacete0 = new ItemStack(Material.AIR);
 		final ItemStack peitoral0 = new ItemStack(Material.AIR);
@@ -88,15 +88,15 @@ public class Barbarian implements Listener, CommandExecutor {
 		p.getInventory().setBoots(Bota0);
 		if (Habilidade.getAbility(p) == "Barbarian") {
 			if (Array.used.contains(p.getName())) {
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §cVoce ja esta usando um kit!");
+				p.sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½7ï¿½ ï¿½cVoce ja esta usando um kit!");
 				return true;
 			}
 			if (!p.hasPermission("kit.barbarian")) {
-				p.sendMessage("§cVoce nao tem permissao para usar este kit !");
+				p.sendMessage("ï¿½cVoce nao tem permissao para usar este kit !");
 				return true;
 			}
 			Array.used.add(p.getName());
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» Voce escolheu o kit §cBarbarian §7!");
+			p.sendMessage(String.valueOf(LightPvP.prefix) + " ï¿½7ï¿½ Voce escolheu o kit ï¿½cBarbarian ï¿½7!");
 			p.setGameMode(GameMode.ADVENTURE);
 			p.getInventory().clear();
 			Array.kit.put(p, "Barbarian");

@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class SetLava implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public SetLava(final Main main) {
+	public SetLava(final LightPvP main) {
 		SetLava.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetLava implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setchallenge") && sender instanceof Player) {
 			if (!sender.hasPermission("sword.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Sem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Sem Permiss\u00e3o");
 			}
 			if (sender.hasPermission("sword.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetLava implements Listener, CommandExecutor {
 				SetLava.plugin.getConfig().set("lava.yaw", (Object) p.getLocation().getYaw());
 				SetLava.plugin.getConfig().set("lava.world", (Object) p.getLocation().getWorld().getName());
 				SetLava.plugin.saveConfig();
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Lava Foi Setada Com Sucesso");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Lava Foi Setada Com Sucesso");
 			}
 			return true;
 		}

@@ -1,9 +1,11 @@
-package Main;
+package com.github.caaarlowsz.lightmc.kitpvp;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.github.caaarlowsz.kitpvpapi.KitPvP;
+import com.github.caaarlowsz.kitpvpapi.KitPvPAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -140,13 +142,34 @@ import Warps.Textura;
 import Warps.TheMain;
 import Warps.WarpRdm;
 
-public class Main extends JavaPlugin {
+public class LightPvP extends JavaPlugin implements KitPvP {
+
+	@Override
+	public void onEnable() {
+		super.onEnable();
+		KitPvPAPI.setInstance(this);
+
+		// TODO: Remover quando melhorar a classe principal
+		this.enable();
+	}
+
+	@Override
+	public void onDisable() {
+		super.onDisable();
+		KitPvPAPI.setInstance(null);
+
+		// TODO: Remover quando melhorar a classe principal
+		this.disable();
+	}
+
+	// TODO: Melhorar a classe principal
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static ArrayList<String> score = new ArrayList();
 	public static MyConfigManager manager;
 	public static Scroller sc;
 	public static Plugin plugin;
-	public static Main instance;
+	public static LightPvP instance;
 	public static String prefix;
 	public static String motd;
 	public static String motd2;
@@ -163,21 +186,21 @@ public class Main extends JavaPlugin {
 	public File arenas1;
 	public YamlConfiguration arenas;
 
-	public static Main getInstace() {
-		return Main.instance;
+	public static LightPvP getInstace() {
+		return LightPvP.instance;
 	}
 
 	public static Plugin getPlugin() {
-		return Main.plugin;
+		return LightPvP.plugin;
 	}
 
-	public void onEnable() {
+	public void enable() {
 		manager = new MyConfigManager(this);
 		XpM.loadMoneyManager();
-		Main.manager = new MyConfigManager(this);
-		Main.plugin = (Plugin) this;
-		(Main.instance = this).saveConfig();
-		(Main.instance = this).saveDefaultConfig();
+		LightPvP.manager = new MyConfigManager(this);
+		LightPvP.plugin = (Plugin) this;
+		(LightPvP.instance = this).saveConfig();
+		(LightPvP.instance = this).saveDefaultConfig();
 		final File stats = new File(this.getDataFolder(), "stats.yml");
 		if (!stats.exists()) {
 			this.saveResource("stats.yml", false);
@@ -190,20 +213,20 @@ public class Main extends JavaPlugin {
 		}
 		this.warps1 = new File(this.getDataFolder(), "warps.yml");
 		this.warps = YamlConfiguration.loadConfiguration(this.warps1);
-		Main.ipsv = this.getConfig().getString("ip_do_sv").replace("&", "§");
-		Main.site = this.getConfig().getString("Site").replace("&", "§");
-		Main.prefix = this.getConfig().getString("Prefix").replace("&", "§");
-		Main.donos = this.getConfig().getString("Dono").replace("&", "§");
-		Main.aplicar = this.getConfig().getString("Formulario").replace("&", "§");
-		Main.motd = this.getConfig().getString("Motd").replace("&", "§");
-		Main.motd2 = this.getConfig().getString("Motd_Manutencao").replace("&", "§");
+		LightPvP.ipsv = this.getConfig().getString("ip_do_sv").replace("&", "ï¿½");
+		LightPvP.site = this.getConfig().getString("Site").replace("&", "ï¿½");
+		LightPvP.prefix = this.getConfig().getString("Prefix").replace("&", "ï¿½");
+		LightPvP.donos = this.getConfig().getString("Dono").replace("&", "ï¿½");
+		LightPvP.aplicar = this.getConfig().getString("Formulario").replace("&", "ï¿½");
+		LightPvP.motd = this.getConfig().getString("Motd").replace("&", "ï¿½");
+		LightPvP.motd2 = this.getConfig().getString("Motd_Manutencao").replace("&", "ï¿½");
 		new BukkitRunnable() {
 			public void run() {
 				Player[] arrayOfPlayer;
 				int j = (arrayOfPlayer = Bukkit.getOnlinePlayers()).length;
 				for (int i = 0; i < j; i++) {
 					Player p = arrayOfPlayer[i];
-					if (!Main.score.contains(p.getName()))
+					if (!LightPvP.score.contains(p.getName()))
 						ScoreBoarding.setScoreBoard(p);
 					else {
 						ScoreBoarding.removeScoreBoard(p);
@@ -214,11 +237,11 @@ public class Main extends JavaPlugin {
 		this.RegisterEvents();
 		Comandos();
 		manager = new MyConfigManager(this);
-		Bukkit.getConsoleSender().sendMessage("§6Plugin §eKitPvP §6Ativado!");
+		Bukkit.getConsoleSender().sendMessage("ï¿½6Plugin ï¿½eKitPvP ï¿½6Ativado!");
 	}
 
-	public void onDisable() {
-		Bukkit.getConsoleSender().sendMessage("§6Plugin §eKitPvP §6Desativado!");
+	public void disable() {
+		Bukkit.getConsoleSender().sendMessage("ï¿½6Plugin ï¿½eKitPvP ï¿½6Desativado!");
 	}
 
 	public void onLoad() {
@@ -226,8 +249,8 @@ public class Main extends JavaPlugin {
 		for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
 			final Player todos = onlinePlayers[i];
 			final ArrayList<String> msg = new ArrayList<>();
-			msg.add(" §4§lAVISO ");
-			msg.add("§cServidor Reiniciando Voltamos Em Instantes Aguarde§7 ");
+			msg.add(" ï¿½4ï¿½lAVISO ");
+			msg.add("ï¿½cServidor Reiniciando Voltamos Em Instantes Aguardeï¿½7 ");
 			todos.kickPlayer(String.valueOf(msg));
 		}
 	}

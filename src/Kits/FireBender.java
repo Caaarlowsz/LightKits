@@ -14,7 +14,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class FireBender implements Listener {
@@ -29,7 +29,7 @@ public class FireBender implements Listener {
 	public FireBender() {
 	}
 
-	public FireBender(final Main main) {
+	public FireBender(final LightPvP main) {
 	}
 
 	@EventHandler
@@ -37,7 +37,7 @@ public class FireBender implements Listener {
 		final Player p = e.getPlayer();
 		final Player ent = (Player) e.getRightClicked();
 		if (FireBender.cooldown.contains(p.getName())) {
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Aguarde o CoolDown Acabar");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Aguarde o CoolDown Acabar");
 			return;
 		}
 		if (KitAPI.FireBender.contains(p.getName()) && p.getItemInHand().getType() == Material.REDSTONE) {
@@ -45,19 +45,19 @@ public class FireBender implements Listener {
 			FireBender.cooldown.add(p.getName());
 			ent.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 50, 200));
 			ent.setFireTicks(150);
-			Bukkit.getScheduler().scheduleAsyncDelayedTask((Plugin) Main.instance, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleAsyncDelayedTask((Plugin) LightPvP.instance, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					FireBender.wateratack.remove(ent.getName());
 				}
 			}, 40L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) LightPvP.instance,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
 							FireBender.cooldown.remove(p.getName());
 							p.sendMessage(
-									String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Seu CoolDown Foi Terminado");
+									String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Seu CoolDown Foi Terminado");
 						}
 					}, 400L);
 		}

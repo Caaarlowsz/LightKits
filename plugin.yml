@@ -1,5 +1,5 @@
 name: KitPvP
-main: Main.Main
+main: com.github.caaarlowsz.lightmc.kitpvp.Main
 version: 1.0
 author: EhOMarcello
 description: Plugin de KitPvP feito pelo zMarcYT

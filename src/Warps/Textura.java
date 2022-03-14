@@ -16,7 +16,7 @@ import org.bukkit.potion.PotionEffect;
 import com.connorlinfoot.titleapi.TitleAPI;
 
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class Textura implements Listener, CommandExecutor {
@@ -26,9 +26,9 @@ public class Textura implements Listener, CommandExecutor {
 	public static ItemMeta warpsmeta;
 	public static ItemStack loja;
 	public static ItemMeta lojameta;
-	public static Main plugin;
+	public static LightPvP plugin;
 
-	public Textura(final Main main) {
+	public Textura(final LightPvP main) {
 		Textura.plugin = main;
 	}
 
@@ -41,7 +41,7 @@ public class Textura implements Listener, CommandExecutor {
 			p.getInventory().setChestplate((ItemStack) null);
 			p.getInventory().setLeggings((ItemStack) null);
 			p.getInventory().setHelmet((ItemStack) null);
-			p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Teleportando Aguarde");
+			p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Teleportando Aguarde");
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Textura.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -65,7 +65,7 @@ public class Textura implements Listener, CommandExecutor {
 					p.setFireTicks(0);
 					p.setFoodLevel(20000);
 					p.setHealth(20.0);
-					TitleAPI.sendFullTitle(p, 50, 50, 80, "§aVoce foi para a", "§b§lTextura");
+					TitleAPI.sendFullTitle(p, 50, 50, 80, "ï¿½aVoce foi para a", "ï¿½bï¿½lTextura");
 					for (final PotionEffect effect : p.getActivePotionEffects()) {
 						p.removePotionEffect(effect.getType());
 					}

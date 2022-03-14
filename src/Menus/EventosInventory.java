@@ -15,14 +15,14 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class EventosInventory implements Listener, CommandExecutor {
 	public static void guiKits(final Player p) {
-		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 27, "§8Eventos");
+		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 27, "ï¿½8Eventos");
 		final ItemStack eventu = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 4);
 		final ItemMeta eventuv = eventu.getItemMeta();
-		eventuv.setDisplayName("§7+");
+		eventuv.setDisplayName("ï¿½7+");
 		eventu.setItemMeta(eventuv);
 		inv.setItem(0, eventu);
 		inv.setItem(1, eventu);
@@ -51,12 +51,12 @@ public class EventosInventory implements Listener, CommandExecutor {
 		inv.setItem(26, eventu);
 		final ItemStack eventos = new ItemStack(Material.CAKE);
 		final ItemMeta eventosv = eventos.getItemMeta();
-		eventosv.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7MDR");
+		eventosv.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7MDR");
 		eventos.setItemMeta(eventosv);
 		inv.setItem(12, eventos);
 		final ItemStack event2 = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta eventv2 = event2.getItemMeta();
-		eventv2.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7RDM");
+		eventv2.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7RDM");
 		event2.setItemMeta(eventv2);
 		inv.setItem(14, event2);
 		p.openInventory(inv);
@@ -74,7 +74,7 @@ public class EventosInventory implements Listener, CommandExecutor {
 	@EventHandler
 	public void onPlayerCLickInventry(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equalsIgnoreCase("§8Eventos") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("ï¿½8Eventos") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
 			if (e.getSlot() == 12) {

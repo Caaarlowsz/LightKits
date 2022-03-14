@@ -3,14 +3,14 @@ package Coins;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class XpM implements Listener {
 	public static MyConfig PlayerMoney;
 	public static int defaultmoney = 0;
 
 	public static void loadMoneyManager() {
-		PlayerMoney = Main.manager.getNewConfig("XP.yml");
+		PlayerMoney = LightPvP.manager.getNewConfig("XP.yml");
 	}
 
 	public static int getPlayerMoney(Player p) {

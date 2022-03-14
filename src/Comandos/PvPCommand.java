@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 
 public class PvPCommand implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -17,11 +17,11 @@ public class PvPCommand implements CommandExecutor, Listener {
 		}
 		if (p.getWorld().getPVP()) {
 			p.getWorld().setPVP(false);
-			Bukkit.getServer().broadcastMessage(String.valueOf(Main.prefix) + " §7O PvP do servidor foi desativado.");
+			Bukkit.getServer().broadcastMessage(String.valueOf(LightPvP.prefix) + " ï¿½7O PvP do servidor foi desativado.");
 			return true;
 		}
 		p.getWorld().setPVP(true);
-		Bukkit.getServer().broadcastMessage(String.valueOf(Main.prefix) + " §7O PvP do servidor foi ativado.");
+		Bukkit.getServer().broadcastMessage(String.valueOf(LightPvP.prefix) + " ï¿½7O PvP do servidor foi ativado.");
 		return true;
 	}
 }

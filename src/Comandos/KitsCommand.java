@@ -13,22 +13,22 @@ import org.bukkit.inventory.meta.ItemMeta;
 import Eventos.Array;
 import Eventos.Basico;
 import Eventos.Habilidade;
-import Main.Main;
+import com.github.caaarlowsz.lightmc.kitpvp.LightPvP;
 import Utils.KitAPI;
 
 public class KitsCommand implements CommandExecutor, Listener {
-	public KitsCommand(final Main main) {
+	public KitsCommand(final LightPvP main) {
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("kit")) {
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Especifique Um Kit (Kit)");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Especifique Um Kit (Kit)");
 				return true;
 			}
 			if (KitAPI.Kit.contains(p.getName())) {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Apenas Um Kit Por Vida");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Apenas Um Kit Por Vida");
 				return true;
 			}
 		}
@@ -40,11 +40,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "PvP");
 				KitAPI.Kit.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit PvP Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit PvP Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("viking")) {
@@ -52,15 +52,15 @@ public class KitsCommand implements CommandExecutor, Listener {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
 				KitAPI.sopa(p);
-				Basico.darItem(p, Material.STONE_AXE, 1, "§6Viking", 0);
+				Basico.darItem(p, Material.STONE_AXE, 1, "ï¿½6Viking", 0);
 				Habilidade.setAbility(p, "Viking");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Viking.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Viking Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Viking Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("ninja")) {
@@ -72,11 +72,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Ninja");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Ninja.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Ninja Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Ninja Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("Boxer")) {
@@ -84,15 +84,15 @@ public class KitsCommand implements CommandExecutor, Listener {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
 				KitAPI.sopa(p);
-				Basico.darItem(p, Material.QUARTZ, 1, "§6Boxer", 0);
+				Basico.darItem(p, Material.QUARTZ, 1, "ï¿½6Boxer", 0);
 				Habilidade.setAbility(p, "Boxer");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Boxer.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Boxer Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Boxer Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("avatar")) {
@@ -103,14 +103,14 @@ public class KitsCommand implements CommandExecutor, Listener {
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Avatar");
 				KitAPI.Kit.add(p.getName());
-				KitAPI.setitem(p, Material.BEACON, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Avatar", 1,
+				KitAPI.setitem(p, Material.BEACON, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Avatar", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				KitAPI.Avatar.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Avatar Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Avatar Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("fisherman")) {
@@ -122,14 +122,14 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Fisherman");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Fisherman.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Fisherman Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Fisherman Foi Selecionado");
 				KitAPI.setitem(p, Material.FISHING_ROD,
-						String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Varinha De Pesca", 1,
+						String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Varinha De Pesca", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("sonic")) {
@@ -141,13 +141,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Sonic");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Sonic.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Sonic Foi Selecionado");
-				KitAPI.setitem(p, Material.LAPIS_BLOCK, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Sonic", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Sonic Foi Selecionado");
+				KitAPI.setitem(p, Material.LAPIS_BLOCK, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Sonic", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("turtle")) {
@@ -159,11 +159,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Turtle");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Turtle.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Turtle Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Turtle Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("poseidon")) {
@@ -175,11 +175,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Poseidon");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Poseidon.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Poseidon Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Poseidon Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("barbarian")) {
@@ -191,12 +191,12 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Barbarian");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Barbarian.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Barbarian Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Barbarian Foi Selecionado");
 				Array.kit.put(p, "Barbarian");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("swords")) {
@@ -208,11 +208,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Swords");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Swords.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Swords Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Swords Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("waterbender")) {
@@ -224,13 +224,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "WaterBender");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.WaterBender.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit WaterBender Foi Selecionado");
-				KitAPI.setitem(p, Material.INK_SACK, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7WaterBender",
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit WaterBender Foi Selecionado");
+				KitAPI.setitem(p, Material.INK_SACK, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7WaterBender",
 						1, Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("velotrol")) {
@@ -242,13 +242,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Velotrol");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Velotrol.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Velotrol Foi Selecionado");
-				KitAPI.setitem(p, Material.MINECART, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Velotrol", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Velotrol Foi Selecionado");
+				KitAPI.setitem(p, Material.MINECART, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Velotrol", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("firebender")) {
@@ -260,13 +260,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "FireBender");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.FireBender.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit FireBender Foi Selecionado");
-				KitAPI.setitem(p, Material.REDSTONE, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7FireBender",
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit FireBender Foi Selecionado");
+				KitAPI.setitem(p, Material.REDSTONE, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7FireBender",
 						1, Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("c4")) {
@@ -278,13 +278,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "C4");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.C4.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit C4 Foi Selecionado");
-				KitAPI.setitem(p, Material.SLIME_BALL, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7C4", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit C4 Foi Selecionado");
+				KitAPI.setitem(p, Material.SLIME_BALL, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7C4", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("terrorista")) {
@@ -296,13 +296,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Terrorista");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Terrorista.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Terrorista Foi Selecionado");
-				KitAPI.setitem(p, Material.MAGMA_CREAM, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7KaaaBumm",
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Terrorista Foi Selecionado");
+				KitAPI.setitem(p, Material.MAGMA_CREAM, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7KaaaBumm",
 						1, Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("stomper")) {
@@ -314,11 +314,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Stomper");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Stomper.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Stomper Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Stomper Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("ajnin")) {
@@ -330,11 +330,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Ajnin");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Ajnin.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Ajnin Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Ajnin Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("kangaroo")) {
@@ -346,13 +346,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Kangaroo");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Kangaroo.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Kangaroor Foi Selecionado");
-				KitAPI.setitem(p, Material.FIREWORK, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7FireWork", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Kangaroor Foi Selecionado");
+				KitAPI.setitem(p, Material.FIREWORK, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7FireWork", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("hulk")) {
@@ -364,13 +364,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Hulk");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Hulk.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Hulk Foi Selecionado");
-				KitAPI.setitem(p, Material.SADDLE, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Hulk", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Hulk Foi Selecionado");
+				KitAPI.setitem(p, Material.SADDLE, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Hulk", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("thor")) {
@@ -382,14 +382,14 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Thor");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Thor.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Thor Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Thor Foi Selecionado");
 				KitAPI.setitem(p, Material.GOLD_AXE,
-						String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Machado Rel\u00e2mpago", 1,
+						String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Machado Rel\u00e2mpago", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("anchor")) {
@@ -401,11 +401,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Anchor");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Anchor.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Anchorr Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Anchorr Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("grandpa")) {
@@ -420,14 +420,14 @@ public class KitsCommand implements CommandExecutor, Listener {
 				final ItemStack kpiru = new ItemStack(Material.STICK);
 				kpiru.addUnsafeEnchantment(Enchantment.KNOCKBACK, 4);
 				final ItemMeta kkpiru = kpiru.getItemMeta();
-				kkpiru.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Graveto");
+				kkpiru.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Graveto");
 				kpiru.setItemMeta(kkpiru);
 				p.getInventory().setItem(1, kpiru);
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Grandpa Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Grandpa Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("resouper")) {
@@ -439,11 +439,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Resouper");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Resouper.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Resouper Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Resouper Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("monk")) {
@@ -455,13 +455,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Monk");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Monk.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Monk Foi Selecionado");
-				KitAPI.setitem(p, Material.BLAZE_ROD, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Monk", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Monk Foi Selecionado");
+				KitAPI.setitem(p, Material.BLAZE_ROD, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Monk", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("switcher")) {
@@ -473,12 +473,12 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Switcher");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Switcher.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Switcher Foi Selecionado");
-				Basico.darItem(p, Material.SNOW_BALL, 32, "§fBola de Neve", 1);
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Switcher Foi Selecionado");
+				Basico.darItem(p, Material.SNOW_BALL, 32, "ï¿½fBola de Neve", 1);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("gladiator")) {
@@ -490,13 +490,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Gladiator");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Gladiator.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Gladiator Foi Selecionado");
-				KitAPI.setitem(p, Material.IRON_FENCE, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Glad", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Gladiator Foi Selecionado");
+				KitAPI.setitem(p, Material.IRON_FENCE, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Glad", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("archer")) {
@@ -508,15 +508,15 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Archer");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Archer.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Archer Foi Selecionado");
-				KitAPI.setitem(p, Material.BOW, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Arco", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Archer Foi Selecionado");
+				KitAPI.setitem(p, Material.BOW, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Arco", 1,
 						Enchantment.ARROW_INFINITE, 1, false);
-				KitAPI.setitem(p, Material.ARROW, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Flecha", 2,
+				KitAPI.setitem(p, Material.ARROW, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Flecha", 2,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("thresh")) {
@@ -528,13 +528,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Thresh");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Thresh.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Thresh Foi Selecionado");
-				KitAPI.setitem(p, Material.LEVER, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Thresh", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Thresh Foi Selecionado");
+				KitAPI.setitem(p, Material.LEVER, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Thresh", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("viper")) {
@@ -546,11 +546,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Viper");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Viper.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Viper Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Viper Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("snail")) {
@@ -562,11 +562,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Snail");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Snail.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Snail Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Snail Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("dublejump")) {
@@ -578,11 +578,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "DubleJump");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.DubleJump.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit DubleJump Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit DubleJump Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("magma")) {
@@ -594,11 +594,11 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Magma");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Magma.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Magma Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Magma Foi Selecionado");
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("phantom")) {
@@ -610,13 +610,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Phantom");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Phantom.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Phantom Foi Selecionado");
-				KitAPI.setitem(p, Material.FEATHER, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Pena", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Phantom Foi Selecionado");
+				KitAPI.setitem(p, Material.FEATHER, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Pena", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("armor")) {
@@ -628,14 +628,14 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Armor");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Armor.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Armor Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Armor Foi Selecionado");
 				KitAPI.setitem(p, Material.GOLD_INGOT,
-						String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Armadura Portatil", 1,
+						String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Armadura Portatil", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("urgal")) {
@@ -647,16 +647,16 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Urgal");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Urgal.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Urgal Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Urgal Foi Selecionado");
 				final ItemStack mf = new ItemStack(Material.POTION, 3, (short) 8201);
 				final ItemMeta kmf = mf.getItemMeta();
-				kmf.setDisplayName(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Urgal");
+				kmf.setDisplayName(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Urgal");
 				mf.setItemMeta(kmf);
 				p.getInventory().setItem(1, mf);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("ironman")) {
@@ -668,16 +668,16 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "IronMan");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.IronMan.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit IronMan Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit IronMan Foi Selecionado");
 				KitAPI.setitem(p, Material.getMaterial(58),
-						String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Mesa De Trabalho", 1,
+						String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Mesa De Trabalho", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
-				KitAPI.setitem(p, Material.STICK, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Graveto", 2,
+				KitAPI.setitem(p, Material.STICK, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Graveto", 2,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("forcefield")) {
@@ -689,13 +689,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "ForceField");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.ForceField.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit FF Foi Selecionado");
-				KitAPI.setitem(p, Material.NETHER_FENCE, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7FF", 1,
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit FF Foi Selecionado");
+				KitAPI.setitem(p, Material.NETHER_FENCE, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7FF", 1,
 						Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("trader")) {
@@ -707,13 +707,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Trader");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Trader.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit Trader Foi Selecionado");
-				KitAPI.setitem(p, Material.ENDER_CHEST, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Lojinha",
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit Trader Foi Selecionado");
+				KitAPI.setitem(p, Material.ENDER_CHEST, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Lojinha",
 						1, Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("jellyfish")) {
@@ -725,13 +725,13 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "JellyFish");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.JellyFish.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit JellyFish Foi Selecionado");
-				KitAPI.setitem(p, Material.CLAY_BALL, String.valueOf(String.valueOf(Main.prefix)) + " §6» §7JellyFish",
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit JellyFish Foi Selecionado");
+				KitAPI.setitem(p, Material.CLAY_BALL, String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7JellyFish",
 						1, Enchantment.DAMAGE_ALL, 0, false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		if (args[0].equalsIgnoreCase("deshfire")) {
@@ -743,14 +743,14 @@ public class KitsCommand implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "DeshFire");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.DeshFire.add(p.getName());
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix)) + " §6» §7Kit DeshFire Foi Selecionado");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7Kit DeshFire Foi Selecionado");
 				KitAPI.setitem(p, Material.REDSTONE_BLOCK,
-						String.valueOf(String.valueOf(Main.prefix)) + " §6» §7DeshFire", 1, Enchantment.DAMAGE_ALL, 0,
+						String.valueOf(String.valueOf(LightPvP.prefix)) + " ï¿½6ï¿½ ï¿½7DeshFire", 1, Enchantment.DAMAGE_ALL, 0,
 						false);
 				SetArenaCommand.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix))
-						+ " §6» §7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
+				p.sendMessage(String.valueOf(String.valueOf(LightPvP.prefix))
+						+ " ï¿½6ï¿½ ï¿½7Voc\u00ea N\u00e3o Tem Permiss\u00e3o Para Usar Este Kit");
 			}
 		}
 		return false;
